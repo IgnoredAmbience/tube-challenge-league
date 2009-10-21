@@ -1,0 +1,53 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Trebuchet MS, Arial, Verdana, Helvetica, sans-serif;
+	background-color: #FFF;
+	font-weight: bold;
+}
+
+#header1 { position: absolute; height: 25px; border-right: solid 1px #F9F9F9; border-left: solid 1px #E9E9E9; border-top: solid 1px #E9E9E9; border-bottom: solid 1px #E9E9E9; left: 100px; right: 50%; top: 25px; background-color: #E9E9E9; line-height: 25px; vertical-align: middle; }
+#header2 { position: absolute; height: 25px; border-left: solid 1px #F9F9F9; border-right: solid 1px #E9E9E9; border-top: solid 1px #E9E9E9; border-bottom: solid 1px #E9E9E9; left: 50%; right: 100px; top: 25px; background-color: #E9E9E9; border-width: 1px; line-height: 25px; vertical-align: middle; text-align: right; }
+#header3 { position: absolute; height: 25px; border: #E9E9E9; border-style: solid; left: 100px; right: 100px; top: 51px; background-color: #F9F9F9; border-width: 1px; line-height: 25px; vertical-align: middle; }
+#header4 { position: absolute; height: 25px; border: #E9E9E9; border-style: solid; left: 100px; right: 100px; top: 77px; background-color: #FFFFFF; border-width: 1px; line-height: 25px; vertical-align: middle; }
+
+
+#content {position: absolute; left: 100px; right: 100px; top: 108px; font-weight: normal; font-size: 10pt; text-align: justify;}
+
+.header3 { border-right: solid 1px #E9E9E9 }
+
+#temps {
+	text-align: right;
+	color: #C4C4C4;
+	font-size: 7.5pt;
+	position: absolute;
+	right: 0px;
+	height: 15px;
+	top: 0px;
+	margin: 0px 0px;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+}
+
+.newshead { background-color: #E4E4E4; vertical-align: middle; font-weight: bold;}
+.row1 {
+	background-color: #F9F9F9;
+}
+
+.row2 {
+     background-color: #F4F4F4;
+}
+
+i { font-size: 8pt; color: #999999; }
+hr { text-align: center;}
+
+a:link    { color: #444444; text-decoration: none }
+a:visited { color: #666666; text-decoration: none }
+a:hover   { color: #FF0000; text-decoration: none }
+a.text:link    { color: #99CCFF; text-decoration: none }
+a.text:visited { color: #C4C4C4; text-decoration: none }
+a.text:hover   { color: #FF0000; text-decoration: underline }
+
+h3 {padding-top: 15px; margin: 0 }
+
+.stats { vertical-align: middle; line-height: 25px }
