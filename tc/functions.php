@@ -20,6 +20,47 @@
 		echo "\t\t<div id=\"header2\">$page_title&nbsp;</div>\n";
 	}
 	
+	function display_menu($directory_depth)
+	{
+		echo "\t\t<div id=\"header3\">\n";
+		echo "\t\t\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
+		echo "\t\t\t\t<tr style=\"text-align: center\">\n";
+		while($directory_depth)
+		{
+			$depth .= "../";
+			$directory_depth--;
+		}
+		echo "\t\t\t\t\t<td class=\"header3\" width=\"25%\"><a href=\"$depth.\">&#187; Home &#171;</a></td>\n";
+		echo "\t\t\t\t\t<td class=\"header3\" width=\"25%\"><a href=\"$depth"."events/\">&#187; Events &#171;</a></td>\n";
+		echo "\t\t\t\t\t<td class=\"header3\" width=\"25%\"><a href=\"$depth"."challengers/\">&#187; Challengers &#171;</a></td>\n";
+		echo "\t\t\t\t\t<td class=\"header3\" width=\"25%\"><a href=\"http://darts.scriv.me.uk/\">&#187; Darts &#171;</a></td>\n";
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t</table>\n";
+		echo "\t\t</div>\n";
+		$now = date("U");
+	}
+	
+	function display_submenu($type, $directory_depth)
+	{
+		echo "\t\t<div id=\"header4\">\n";
+		echo "\t\t\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
+		echo "\t\t\t\t<tr style=\"text-align: center\">\n";
+		while($directory_depth)
+		{
+			$depth .= "../";
+			$directory_depth--;
+		}
+		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"../league/\">&#187; Current League Table &#171;</a></td>\n";}
+		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."missing/\">&#187; Appeal &#171;</a></td>\n";}
+		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"../history/\">&#187; Record History &#171;</a></td>\n";}
+		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"$depth"."latest/\">&#187; Latest Times &#171;</a></td>\n";}
+		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\">&#187; Statistics &#171;</td>\n";}
+		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."statistics/\">&#187; Statistics &#171;</a></td>\n";}
+		echo "\t\t\t\t</tr>\n";
+		echo "\t\t\t</table>\n";
+		echo "\t\t</div>\n";
+	}
+	
 	function display_footer($page_title)
 	{
 		$page_title = str_replace(" ", "%20", $page_title);

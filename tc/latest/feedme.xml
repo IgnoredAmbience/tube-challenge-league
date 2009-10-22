@@ -7,6 +7,12 @@
 		<copyright>Copyright 2008 Matthew Scrivin and others.</copyright>
 		<docs>http://backend.userland.com/rss</docs>
 		<item>
+			<title>NEW TIME: John Stark &amp; Ollie Lewisohn</title>
+			<link>http://tc.scriv.me.uk/alllines/league/</link>
+			<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: John Stark &amp; Ollie Lewisohn<br/>Challenge: All Lines<br/>Time: 1:01:08<br/>Date: 2007-06-22]]></description>
+			<pubDate>2009-10-22 08:54:07</pubDate>
+		</item>
+		<item>
 			<title>NEW TIME: Adam &amp; Ian Jones</title>
 			<link>http://tc.scriv.me.uk/random15/league/</link>
 			<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: Adam &amp; Ian Jones<br/>Challenge: Random 15<br/>Time: 4:27:00<br/>Date: 2009-10-17]]></description>
@@ -119,12 +125,6 @@
 			<link>http://tc.scriv.me.uk/129snake/league/</link>
 			<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: Steven Karahan &amp; Kevin Brown<br/>Challenge: 128 Snake<br/>Time: 6:24:33<br/>Date: 2009-07-24]]></description>
 			<pubDate>2009-08-30 20:49:37</pubDate>
-		</item>
-		<item>
-			<title>NEW TIME: Thomas Wood &amp; Philip Brown</title>
-			<link>http://tc.scriv.me.uk/129snake/league/</link>
-			<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: Thomas Wood &amp; Philip Brown<br/>Challenge: 128 Snake<br/>Time: 6:36:42<br/>Date: 2009-07-24]]></description>
-			<pubDate>2009-08-22 09:50:51</pubDate>
 		</item>
 	</channel>
 </rss>

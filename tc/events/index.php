@@ -4,20 +4,11 @@
 	
 	$page_title = "Events Index";
 	$directory_depth = 1;
+	$type = "main";
 	display_header($page_title, $directory_depth); 
-	
-	include('../menu.php');
+	display_menu($directory_depth);
+	display_submenu($type, $directory_depth);
 ?>
-<div id="header4">
-<table border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr style="text-align: center">
-		<td class="header3" width="33%"><a href="/missing/">&#187; Appeal &#171;</a></td>
-		<td class="header3" width="34%"><a href="/latest/">&#187; Latest Times &#171;</a></td>
-		<td width="33%"><a href="/statistics/">&#187; Statistics &#171;</a></td>
-	</tr>
-</table>
-</div>
-
 <div id="content">
 	<h3>&nbsp;</h3>
 <p>Where times are set during organised events (defined as wished, although all events should have more than one competitor), this is recorded on the database. Below is a list of all such &#8216;events&#8217; where times were recorded. Click through to see the results of the event.</p>
@@ -49,4 +40,4 @@
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
 			</table>
-<?php display_footer($page_title); ?>
+<?php display_footer($page_title); ?>-
