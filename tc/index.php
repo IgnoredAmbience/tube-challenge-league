@@ -8,7 +8,10 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">Welcome&nbsp;</div>
-<?php include('menu.php'); ?>
+<?php
+	include('settings.inc');
+	include('menu.php');
+?>
 <div id="header4">
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<tr style="text-align: center">
@@ -29,10 +32,6 @@
 					<td class="newshead" colspan="2"><a href="fullnetwork/league/">Full Network Challenge</a></td>
 				</tr>
 				<?php
-					mysql_pconnect("localhost","Mcrivpro","password")
-						or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-
 					$query = "SELECT * FROM tc_data WHERE tc_challenge in ('270', '269') AND tc_fn_station_count is null ORDER BY tc_hours, tc_mins, tc_sec LIMIT 3";
 					$fnc = mysql_query($query) or die("Select Failed! [301]");
 
