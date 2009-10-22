@@ -9,7 +9,7 @@
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">Welcome&nbsp;</div>
 <?php
-	include('settings.inc');
+	include('settings.php');
 	include('menu.php');
 ?>
 <div id="header4">
