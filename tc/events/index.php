@@ -1,15 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-  <title>Tube Challenge League Tables - UNDER CONSTRUCTION!!</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" title="Default" type="text/css" href="../default.css" />
-</head>
-<body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
-<div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
-<div id="header2">&nbsp;Events Index</div>
 <?php
 	include('../settings.php');
+	include('../functions.php');
+	
+	$page_title = "Events Index";
+	$directory_depth = 1;
+	display_header($page_title, $directory_depth); 
+	
 	include('../menu.php');
 ?>
 <div id="header4">
@@ -53,7 +49,4 @@
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
 			</table>
-<p>Errors? Omissions? Dates? Email: <a href="mailto:tube@scriv.me.uk">tube&#64;scriv.me.uk</a>.</p>
-</div>
-</body>
-</html>
+<?php display_footer($page_title); ?>
