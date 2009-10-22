@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Oct 21, 2009 at 07:05 PM
+-- Generation Time: Oct 22, 2009 at 08:02 PM
 -- Server version: 4.1.20
 -- PHP Version: 5.2.8
 -- 
@@ -58,7 +58,7 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('A12', 'David Scard &amp; Mark Knee', 1, 0, 37, NULL, '2005-02-03', NULL, NULL, NULL, 25, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A12', 'Matt Nunn, Andi James &amp; Andrew Baker', 1, 0, 49, 'ELL Closure All Lines', '2007-12-22', NULL, NULL, NULL, 26, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A12', 'Anthony Smith &amp; Peter Miller', 1, 0, 55, NULL, NULL, NULL, NULL, NULL, 27, 'N', 'Mig', '0000-00-00 00:00:00'),
-('A12', 'John Stark &amp; Ollie Lewisohn', 1, 1, 8, NULL, NULL, NULL, NULL, NULL, 28, 'N', 'Mig', '0000-00-00 00:00:00'),
+('A12', 'John Stark &amp; Ollie Lewisohn', 1, 1, 8, NULL, '2007-06-22', NULL, NULL, NULL, 28, 'N', 'MJS', '2009-10-22 08:54:07'),
 ('A12', 'David Scard', 1, 1, 41, NULL, NULL, NULL, NULL, NULL, 29, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Matt Nunn', 1, 2, 35, 'All Lines Challenge Night', '2008-01-29', NULL, NULL, NULL, 17, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A12', 'Kevin, Philip &amp; Ryan Brown', 1, 3, 5, 'ELL Closure All Lines', '2007-12-22', NULL, NULL, NULL, 30, 'N', 'Mig', '0000-00-00 00:00:00'),
