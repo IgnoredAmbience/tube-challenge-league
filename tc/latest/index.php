@@ -40,7 +40,7 @@
 
 					$fncpos = 0;
 					
-					$rssfile = "<?xml version=\"1.0\" ?>  <rss version=\"0.91\">    <channel>      <title>Tube Challenge League Tables</title>     <link>http://tc.scriv.me.uk/</link>      <description>Latest times submitted to the Tube Challenge database.</description>      <copyright>Copyright 2008 Matthew Scrivin and others.</copyright>     <docs>http://backend.userland.com/rss</docs>";
+					$rssfile = "<?xml version=\"1.0\" ?>\n<rss version=\"0.91\">\n\t<channel>\n\t\t<title>Tube Challenge League Tables</title>\n\t\t<link>http://tc.scriv.me.uk/</link>\n\t\t<description>Latest times submitted to the Tube Challenge database.</description>\n\t\t<copyright>Copyright 2008 Matthew Scrivin and others.</copyright>\n\t\t<docs>http://backend.userland.com/rss</docs>\n";
 						
 					while ($fncdata = mysql_fetch_array($fnc)) {
 						$fncpos++; 				
@@ -51,7 +51,7 @@
 					if ($fncdata['tc_sec'] < 10){ $formattedtime .= "0"; } 
 					$formattedtime .= $fncdata['tc_sec']; 
 					
-					$morefeed = "<item>        <title>NEW TIME: ".$fncdata['tc_name']."</title>     <link>http://tc.scriv.me.uk/".$fncdata['tc_uri']."/league/</link>        <description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: ".$fncdata['tc_name']."<br/>Challenge: ".$fncdata['tc_short_name']."<br/>Time: ".$formattedtime."<br/>Date: ".$fncdata['tc_date']."]]></description>     <pubDate>".$fncdata['tc_upd_date']."</pubDate>      </item>";
+					$morefeed = "\t\t<item>\n\t\t\t<title>NEW TIME: ".$fncdata['tc_name']."</title>\n\t\t\t<link>http://tc.scriv.me.uk/".$fncdata['tc_uri']."/league/</link>\n\t\t\t<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: ".$fncdata['tc_name']."<br/>Challenge: ".$fncdata['tc_short_name']."<br/>Time: ".$formattedtime."<br/>Date: ".$fncdata['tc_date']."]]></description>\n\t\t\t<pubDate>".$fncdata['tc_upd_date']."</pubDate>\n\t\t</item>\n";
 
 					$rssfile .= $morefeed;
 						?>
@@ -72,7 +72,7 @@
 				</tr><?php } } 
 				
 				
-				$rssfile .= "    </channel>  </rss>";
+				$rssfile .= "\t</channel>\n</rss>";
 
 				if(!$habdle = fopen('feedme.xml', 'w')){
 					print "File open error";
