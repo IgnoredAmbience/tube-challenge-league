@@ -4,7 +4,7 @@
 <head>
   <title>Tube Challenge League Tables - UNDER CONSTRUCTION!!</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" title="Default" type="text/css" href="/default.css" />
+  <link rel="stylesheet" title="Default" type="text/css" href="../default.css" />
 </head>
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
