@@ -9,15 +9,12 @@
   <meta name="description" content="Personal Homepage of Matthew Scrivin">
 </head>
 <body>
-
-<?php include('../base.php'); ?>
-
+<?php
+	include('../settings.php');
+	include('../base.php');
+?>
 <div id="page">
 <?php
-    mysql_pconnect("localhost","Mcrivpro","password")
-                   or die("Unable to connect to SQL server");
-    mysql_select_db("Mcrivpro") or die("Unable to select database"); 
-
 	$query2 = "SELECT * FROM darts_matches WHERE match_key = '$match' ORDER BY match_played_date DESC, match_key DESC";
 	$moo2 = mysql_query($query2) or die("Select Failed! [502]");
 	$isany = mysql_num_rows($moo2);

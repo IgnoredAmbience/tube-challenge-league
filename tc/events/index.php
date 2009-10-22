@@ -8,7 +8,10 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">&nbsp;Events Index</div>
-<?php include('../menu.php'); ?>
+<?php
+	include('../settings.php');
+	include('../menu.php');
+?>
 <div id="header4">
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<tr style="text-align: center">
@@ -29,10 +32,7 @@
 					<td width="90">Type</td>
 					<td width="75">Date</td>
 				</tr>
-				<?php	mysql_pconnect("localhost","Mcrivpro","password")
-					or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-					
+				<?php					
 					$query = "SELECT DISTINCT tc_event, tc_date, tc_short_name, tc_data.tc_challenge FROM tc_data INNER JOIN tc_challenge on tc_data.tc_challenge = tc_challenge.tc_challenge WHERE tc_event is not null AND tc_event <> '(First Ever Z1 time)' ORDER BY tc_date DESC";
 					$fnc = mysql_query($query) or die("Select Failed! [902]");
 

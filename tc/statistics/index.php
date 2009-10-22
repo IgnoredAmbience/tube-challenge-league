@@ -8,7 +8,10 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">&nbsp;Statistics</div>
-<?php include('../menu.php'); ?>
+<?php
+	include('../settings.php');
+	include('../menu.php');
+?>
 <div id="header4">
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<tr style="text-align: center">
@@ -25,10 +28,6 @@
    <tr class="row2">
      <td>Total time spent on the tube:</td>
 	 <td align="right"><b><?php
-					mysql_pconnect("localhost","Mcrivpro","password")
-						or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-					
 					$query = "SELECT SUM(tc_hours), SUM(tc_mins), SUM(tc_sec) FROM tc_data";
 					$fnc = mysql_query($query) or die("Select Failed! [302]"); 					
 					$fncdata = mysql_fetch_array($fnc); 

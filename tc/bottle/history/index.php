@@ -8,9 +8,11 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables</div>
 <div id="header2">&nbsp;Bottle Challenge History</div>
-<?php include('../../menu.php');
- include('../../submenu.php'); ?>
-
+<?php
+	include('../../settings.php');
+	include('../../menu.php');
+	include('../../submenu.php');
+?>
 <div id="content">
 	<h3>&nbsp;</h3>
 <p>The following table shows only times which broke the existing record when they were set, and as such is an account of the evolution of the record over time.</p>
@@ -23,10 +25,7 @@
 					<td width="150">Event</td>
 					<td width="60">Held for</td>
 				</tr>
-				<?php	mysql_pconnect("localhost","Mcrivpro","password")
-					or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-					
+				<?php					
 					$query = "SELECT * FROM tc_data WHERE tc_challenge = 'BOT' AND tc_date is not null ORDER BY tc_date, tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 

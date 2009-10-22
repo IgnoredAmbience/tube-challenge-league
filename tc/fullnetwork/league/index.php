@@ -8,9 +8,11 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">Full Network Challenge&nbsp;</div>
-<?php include('../../menu.php');
- include('../../submenu.php'); ?>
-
+<?php
+	include('../../settings.php');
+	include('../../menu.php');
+	include('../../submenu.php');
+?>
 <div id="content">
 	<h3>&nbsp;</h3>
 			<table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -18,11 +20,7 @@
 					<td class="newshead" colspan="2"><b>Challenge Details</b></td>
 					<td>&nbsp;</td>
 				</tr>
-					<?php
-					mysql_pconnect("localhost","Mcrivpro","password")
-						or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-
+				<?php
 					$query = "SELECT * FROM tc_challenge WHERE tc_challenge = '270'";
 					$moo = mysql_query($query) or die("Select Failed! [501]");
 					$details = mysql_fetch_array($moo)

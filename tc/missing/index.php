@@ -8,7 +8,10 @@
 <body><div id="temps">Page generated at: <?php echo date("H:i"); ?>,&nbsp;<?php echo date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
 <div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
 <div id="header2">&nbsp;Missing Data</div>
-<?php include('../menu.php'); ?>
+<?php
+	include('../settings.php');
+	include('../menu.php');
+?>
 <div id="header4">
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<tr style="text-align: center">
@@ -31,10 +34,6 @@
 					<td width="75" align="right">Time&nbsp;</td>
 				</tr>
 				<?php
-					mysql_pconnect("localhost","Mcrivpro","password")
-						or die("Unable to connect to SQL server");
-					mysql_select_db("Mcrivpro") or die("Unable to connect to database"); 
-					
 					$query = "SELECT * FROM tc_data INNER JOIN tc_challenge on tc_data.tc_challenge = tc_challenge.tc_challenge WHERE tc_date is null ORDER BY tc_data.tc_challenge, tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 
