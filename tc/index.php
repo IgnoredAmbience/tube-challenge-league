@@ -2,6 +2,7 @@
 	include('settings.php');
 	include('functions.php');
 	
+	$now = date("U");
 	$page_title = "Welcome";
 	$directory_depth = 0;
 	$type = "main";

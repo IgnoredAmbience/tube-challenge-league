@@ -37,7 +37,6 @@
 		echo "\t\t\t\t</tr>\n";
 		echo "\t\t\t</table>\n";
 		echo "\t\t</div>\n";
-		$now = date("U");
 	}
 	
 	function display_submenu($type, $directory_depth)
