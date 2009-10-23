@@ -1,44 +1,54 @@
 -- phpMyAdmin SQL Dump
--- version 2.8.2
+-- version 2.11.6
 -- http://www.phpmyadmin.net
--- 
+--
 -- Host: localhost
--- Generation Time: Oct 22, 2009 at 08:02 PM
--- Server version: 4.1.20
--- PHP Version: 5.2.8
--- 
--- Database: `Mcrivpro`
--- 
+-- Generation Time: Oct 23, 2009 at 10:53 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `dbtubechallengeleague`
+--
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `tc_data`
--- 
+--
 
 CREATE TABLE `tc_data` (
-  `tc_challenge` char(3) NOT NULL default '',
-  `tc_name` varchar(255) NOT NULL default '',
+  `tc_challenge` char(3) collate utf8_unicode_ci NOT NULL,
+  `tc_name` varchar(255) collate utf8_unicode_ci NOT NULL,
   `tc_hours` tinyint(2) NOT NULL default '0',
   `tc_mins` tinyint(2) NOT NULL default '0',
   `tc_sec` tinyint(2) NOT NULL default '0',
-  `tc_event` varchar(255) default NULL,
+  `tc_event` varchar(255) collate utf8_unicode_ci default NULL,
   `tc_date` date default NULL,
   `tc_fn_station_count` smallint(4) default NULL,
-  `tc_fn274_excluded_station` char(3) default NULL,
-  `tc_fn_gwr` char(1) default NULL,
+  `tc_fn274_excluded_station` char(3) collate utf8_unicode_ci default NULL,
+  `tc_fn_gwr` char(1) collate utf8_unicode_ci default NULL,
   `tc_uid` int(4) NOT NULL auto_increment,
-  `tc_pending_yn` char(1) NOT NULL default 'N',
-  `tc_upd_id` char(3) NOT NULL default '',
+  `tc_pending_yn` char(1) collate utf8_unicode_ci NOT NULL default 'N',
+  `tc_upd_id` char(3) collate utf8_unicode_ci NOT NULL,
   `tc_upd_date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`tc_uid`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=486 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=486 ;
 
--- 
+--
 -- Dumping data for table `tc_data`
--- 
+--
 
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
+('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Matt Nunn', 0, 39, 46, NULL, '2008-02-07', NULL, NULL, NULL, 8, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Kevin &amp; Ryan Brown, Ann Howell &amp; John Stark', 0, 42, 4, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 9, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Antony &amp; Phil Brown', 0, 46, 11, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 10, 'N', 'Mig', '0000-00-00 00:00:00'),
@@ -418,7 +428,8 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('Z12', 'Peter Smyth', 6, 51, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 379, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Matthew Scrivin &amp; Steven Karahan', 7, 18, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 380, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Kevin Brown', 7, 56, 29, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 381, 'N', 'MJS', '2008-11-09 11:08:50');
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
+('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Alistair Brown', 8, 9, 40, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 383, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Martin Hazel', 8, 35, 15, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 384, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('270', 'Antony, Kevin, Phil &amp; Jamie Brown, Matthew Scrivin &amp; Pudsey', 17, 41, 43, 'Children in Need 2008', '2008-11-14', NULL, NULL, NULL, 385, 'N', 'MJS', '2008-11-16 13:46:39'),
