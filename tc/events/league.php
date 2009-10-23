@@ -58,7 +58,7 @@
 					<td width="150">Event</td>
 				</tr>
 				<?php
-					$query = "SELECT * FROM tc_data WHERE tc_challenge = 'BOR' ORDER BY tc_hours, tc_mins, tc_sec";
+					$query = "SELECT * FROM tc_data WHERE tc_challenge = '$event' ORDER BY tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 
 					$fncpos = 0;
