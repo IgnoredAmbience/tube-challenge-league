@@ -25,14 +25,14 @@
 <p>All results:</p>
 <p>
 <?php
-	while ($metails = mysql_fetch_array($moo2)){ $pos++; ?>Date: <?php echo date("d-M-Y", strtotime($metails['match_played_date'])); ?><br/>
-	<?php echo $metails['winner_1']; ?><br/>
-	<?php echo $metails['winner_2']; ?><br/>
-	<?php echo $metails['loser_1']; ?><br/>
-	<?php echo $metails['loser_2']; ?><br/>
-	<?php echo $metails['checkout_thrown_by']; ?><br/>
-	<?php echo $metails['checkout_score']; ?><br/>
-	<?php echo $metails['match_venue_key']; ?><br/>
+	while ($metails = mysql_fetch_array($moo2)){ $pos++; ?>Date: <?php echo date("d-M-Y", strtotime($metails['match_played_date'])); ?><br />
+	<?php echo $metails['winner_1']; ?><br />
+	<?php echo $metails['winner_2']; ?><br />
+	<?php echo $metails['loser_1']; ?><br />
+	<?php echo $metails['loser_2']; ?><br />
+	<?php echo $metails['checkout_thrown_by']; ?><br />
+	<?php echo $metails['checkout_score']; ?><br />
+	<?php echo $metails['match_venue_key']; ?><br />
 <?php } ?></p>
 <?php } ?>
 <p>* Non-tube challengers</p>

@@ -73,7 +73,7 @@
 				<tr height="10">
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
-			</table><br/>
+			</table><br />
 <h3>Previous Configurations</h3>
 			<p>In June 2008 Tower Gateway closed, bringing about the second temporary configuration, until the re-opening of Tower Gateway and the opening of Woolwich Arsenal</p>
 <table align="center" border="0" cellpadding="1" cellspacing="0">
@@ -105,7 +105,7 @@
 				<tr height="10">
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
-			</table><br/>
+			</table><br />
 			<hr width="400" />
 <p>Between December 2007 and June 2008 the first of two short-term interim configurations existed - this one was 39 stations with the opening of Langdon Park, but before the closure of Tower Gateway.</p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
@@ -137,7 +137,7 @@
 				<tr height="10">
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
-			</table><br/>
+			</table><br />
 			<hr width="400" />
 <p>Until December 2007 there was no station at Langdon Park, and a separate record existed for this configuration.</p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">

@@ -27,7 +27,7 @@
 <? if(!($no && $min && $max)){ ?><p>Welcome to the Tube Challenge League Tables website Random station generator. This was designed with <a href="/random15/league/">Random 15</a> challenges in mind, but is configurable in many weird and wonderful ways. Anyone for a Random 40 across all 9 zones? Go for it...</p>
 <h4>Step 1 of 4</h4>
 <FORM METHOD="POST" ACTION="./">
-<p>Number of stations required: <INPUT TYPE="text" NAME="no" SIZE="3" MAXLENGTH="3" VALUE="15"><br/>
+<p>Number of stations required: <INPUT TYPE="text" NAME="no" SIZE="3" MAXLENGTH="3" VALUE="15"><br />
  And the zones these stations should span? <INPUT TYPE="text" NAME="min" SIZE="3" MAXLENGTH="1" VALUE="1">-<INPUT TYPE="text" NAME="max" SIZE="3" MAXLENGTH="1" VALUE="2"></p>
 <table>
   <tr>
@@ -88,7 +88,7 @@ if($no && $min && $max && $start && !$exclude && !$exlist){ ?><h4>Step 3 of 4</h
 		<td><?php echo $fncdata['tc_station_name']; ?></td>
 		<td><input type="checkbox" name="exclude[]" value="<?php echo $fncdata['tc_station_id']; ?>"></td>
 	</tr><?php $fncpos++; } ?>
-</table><br/>
+</table><br />
 <input type="hidden" name="exclude[]" value="-1" />
 <INPUT TYPE="submit" VALUE="Next">
 </FORM>
@@ -102,9 +102,9 @@ $result = mysql_fetch_array($fnc);
 
 ?>
 <p>You are about to generate <b><?php echo $no; ?></b> random stations with the following criteria:</p>
-<p>Networks used: <b><?php if($is_lu_yn == "on"){ ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br/>
-Starting station: <b><?php if($start == -1){ ?>random<?php } else { echo $result['tc_station_name']; } ?></b><br/>
-Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br/><?php
+<p>Networks used: <b><?php if($is_lu_yn == "on"){ ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br />
+Starting station: <b><?php if($start == -1){ ?>random<?php } else { echo $result['tc_station_name']; } ?></b><br />
+Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br /><?php
 
 $exlist = "-1";
 
@@ -129,9 +129,9 @@ $result = mysql_fetch_array($fnc);
 
 ?>
 <p>Here are your <b><?php echo $no; ?></b> random stations, drawn using the following criteria:</p>
-<p>Networks used: <b><?php if($is_lu_yn == "on"){ ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br/>
-Starting station: <b><?php if($start == -1){ ?>random<?php } else { $starter = $result['tc_station_name']; echo $starter; } ?></b><br/>
-Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br/><?php
+<p>Networks used: <b><?php if($is_lu_yn == "on"){ ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br />
+Starting station: <b><?php if($start == -1){ ?>random<?php } else { $starter = $result['tc_station_name']; echo $starter; } ?></b><br />
+Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br /><?php
 
  $query = "SELECT * FROM tc_stations WHERE tc_station_id in ($exlist)";
  $fnc = mysql_query($query) or die("Select Failed! [000]");

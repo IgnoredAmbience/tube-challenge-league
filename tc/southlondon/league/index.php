@@ -42,7 +42,7 @@
 					<td class="row2">Dates:</td>
 					<td class="row1" colspan="2"><?php echo $details['tc_dates']; ?></td>
 				</tr>
-			</table><br/>
+			</table><br />
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
 				<tr class="newshead">  
 					<td width="20"></td>
@@ -72,7 +72,7 @@
 				<tr height="10">
 					<td colspan="5">&nbsp;</td>
 				</tr><?php } } ?>
-			</table><br/>
+			</table><br />
 			<hr width="400" />
 <h3>Previous Configurations</h3>
 <p>Until December 2007 the East London Line formed part of the London Underground Network, and until it's removal, the South London Challenge included Wapping, Surrey Quays, New Cross &amp; New Cross Gate.</p>

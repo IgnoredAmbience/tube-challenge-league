@@ -51,7 +51,7 @@
 					if ($fncdata['tc_sec'] < 10){ $formattedtime .= "0"; } 
 					$formattedtime .= $fncdata['tc_sec']; 
 					
-					$morefeed = "\t\t<item>\n\t\t\t<title>NEW TIME: ".$fncdata['tc_name']."</title>\n\t\t\t<link>http://tc.scriv.me.uk/".$fncdata['tc_uri']."/league/</link>\n\t\t\t<description><![CDATA[A new time has been submitted to the tube challenge database.<br/><br/>Name: ".$fncdata['tc_name']."<br/>Challenge: ".$fncdata['tc_short_name']."<br/>Time: ".$formattedtime."<br/>Date: ".$fncdata['tc_date']."]]></description>\n\t\t\t<pubDate>".$fncdata['tc_upd_date']."</pubDate>\n\t\t</item>\n";
+					$morefeed = "\t\t<item>\n\t\t\t<title>NEW TIME: ".$fncdata['tc_name']."</title>\n\t\t\t<link>http://tc.scriv.me.uk/".$fncdata['tc_uri']."/league/</link>\n\t\t\t<description><![CDATA[A new time has been submitted to the tube challenge database.<br /><br />Name: ".$fncdata['tc_name']."<br />Challenge: ".$fncdata['tc_short_name']."<br />Time: ".$formattedtime."<br />Date: ".$fncdata['tc_date']."]]></description>\n\t\t\t<pubDate>".$fncdata['tc_upd_date']."</pubDate>\n\t\t</item>\n";
 
 					$rssfile .= $morefeed;
 						?>

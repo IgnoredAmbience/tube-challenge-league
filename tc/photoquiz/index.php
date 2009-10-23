@@ -42,7 +42,7 @@
 				<tr height="18" class="row<?php if($fncpos%2 != 0){ echo "1"; } else { echo "2"; } ?>">
 					<td><?php echo $fncdata['username']; ?></td>
 				<?php for ($i = 0; $i <= 20; $i++) { ?>
-					<td<?php $field = "q".$i; if($fncdata[$field] == 1){ ?> style="background-color: #BFB"><img src="tick.png" alt="*" border="0"/><?php $corr++; } else { ?>>&nbsp;<?php } ?></td><?php } ?>
+					<td<?php $field = "q".$i; if($fncdata[$field] == 1){ ?> style="background-color: #BFB"><img src="tick.png" alt="*" border="0" /><?php $corr++; } else { ?>>&nbsp;<?php } ?></td><?php } ?>
 					<td class="newshead" align="right"><?php echo $corr; $corr = 0; ?>&nbsp;</td>
 				</tr><?php } ?>
 			</table>

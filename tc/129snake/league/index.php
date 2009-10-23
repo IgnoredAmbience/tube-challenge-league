@@ -87,7 +87,7 @@
 					<td ><i><?php echo $fncdata['tc_event']; ?></i></td>
 				</tr>
 				<?php } ?>
-			</table><br/>
+			</table><br />
 <h3>Previous Configurations</h3>
 <p>The previous configuration was 129 stations, and existed prior to the closure of the East London Line.</p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">

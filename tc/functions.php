@@ -50,12 +50,18 @@
 			$depth .= "../";
 			$directory_depth--;
 		}
-		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"../league/\">&#187; Current League Table &#171;</a></td>\n";}
-		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."missing/\">&#187; Appeal &#171;</a></td>\n";}
-		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"../history/\">&#187; Record History &#171;</a></td>\n";}
-		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"$depth"."latest/\">&#187; Latest Times &#171;</a></td>\n";}
-		if($type == "event") {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\">&#187; Statistics &#171;</td>\n";}
-		else {echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."statistics/\">&#187; Statistics &#171;</a></td>\n";}
+		if($type == "event")
+		{
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"../league/\">&#187; Current League Table &#171;</a></td>\n";
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"../history/\">&#187; Record History &#171;</a></td>\n";
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\">&#187; Statistics &#171;</td>\n";
+		}
+		else
+		{
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."missing/\">&#187; Appeal &#171;</a></td>\n";
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"34%\"><a href=\"$depth"."latest/\">&#187; Latest Times &#171;</a></td>\n";
+			echo "\t\t\t\t\t<td class=\"header3\" width=\"33%\"><a href=\"$depth"."statistics/\">&#187; Statistics &#171;</a></td>\n";
+		}
 		echo "\t\t\t\t</tr>\n";
 		echo "\t\t\t</table>\n";
 		echo "\t\t</div>\n";

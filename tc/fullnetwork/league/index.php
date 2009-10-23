@@ -87,7 +87,7 @@
 					<td ><i><?php echo $fncdata['tc_event']; ?></i></td>
 				</tr>
 				<?php } ?>
-			</table><br/>
+			</table><br />
 			<hr width="400" />
 <h3>Previous Configurations</h3>
 <p>Between December 2007 and March 2008 there existed a short-lived configuration of 268 stations, as the system was inbetween the closure of the East London Line, and the opening of the new Heathrow Terminal 5 branch of the Piccadilly Line.</p>
