@@ -1,27 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<title>Tube Challenge League Tables - UNDER CONSTRUCTION!!</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" title="Default" type="text/css" href="default.css" />
-</head>
-<body>
-	<div id="temps">Page generated at: <?php echo date("H:i").",&nbsp;".date("d.m.y"); ?>&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
-	<div id="header1">&nbsp;Tube Challenge League Tables - UNDER CONSTRUCTION!!</div>
-	<div id="header2">Welcome&nbsp;</div>
 <?php
+	if(!empty($_GET)) {extract($_GET);}
 	include('settings.php');
-	include('menu.php');
+	include('functions.php');
+	
+	$page_title = "Welcome";
+	$directory_depth = 0;
+	$type = "main";
+	display_header($page_title, $directory_depth); 
+	display_menu($directory_depth);
+	display_submenu($type, $directory_depth);
 ?>
-	<div id="header4">
-		<table border="0" cellpadding="0" cellspacing="0" width="100%">
-			<tr style="text-align: center">
-				<td class="header3" width="33%"><a href="missing/">&#187; Appeal &#171;</a></td>
-				<td class="header3" width="34%"><a href="latest/">&#187; Latest Times &#171;</a></td>
-				<td class="header3" width="33%"><a href="statistics/">&#187; Statistics &#171;</a></td>
-			</tr>
-		</table>
-	</div>
 	<div id="content">
 		<p>Welcome to the Tube Challenge League Tables website. The top 3 in each currently open category are shown below - click through to see full league tables and previous configurations. <b><a href="http://darts.scriv.me.uk/">Darts statistics</a></b> are housed on their own <a href="http://darts.scriv.me.uk/">separate website</a>.</p>
 		<table width="100%" cellspacing="10">
@@ -469,7 +457,7 @@
 			</tr>
 		 </table>
 		 <p>Please read my <a style="text-decoration: underline" href="missing/">appeal for missing data</a>.</p>
-		 <p>I intend to <a href="shopping-list/">introduce some more features</a> in due course. In the meantime, please email all new data and corrections to <a href="mailto:tube@scriv.me.uk">tube&#64;scriv.me.uk</a>.</p>
+		 <p>I intend to <a href="shopping-list/">introduce some more features</a> in due course. In the meantime, please email all new data and corrections to <a href="mailto:tube@scriv.me.uk?subject=Welcome">tube&#64;scriv.me.uk</a>.</p>
 		</div>
 	</body>
 </html>

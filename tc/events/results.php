@@ -36,13 +36,16 @@
 				</tr>
 			</table>
 			<br />
-			<?php if(!($type == '270' or $type == '268' or $type == '269' or $type == '274' or $type == '275')){ ?>
-					<table align="center" border="0" cellpadding="1" cellspacing="0">
-						<tr class="newshead">  
-							<td width="20"></td>
-							<td>Name</td>
-							<td width="75" align="right">Time&nbsp;</td>
-						</tr>
+<?php
+	if(!($type == '270' or $type == '268' or $type == '269' or $type == '274' or $type == '275'))
+	{
+?>
+			<table align="center" border="0" cellpadding="1" cellspacing="0">
+				<tr class="newshead">  
+					<td width="20"></td>
+					<td>Name</td>
+					<td width="75" align="right">Time&nbsp;</td>
+				</tr>
 						<?php
 							$query = "SELECT * FROM tc_data WHERE tc_event = '$event' AND tc_date = '$date' AND tc_challenge = '$type' ORDER BY tc_hours, tc_mins, tc_sec";
 							$fnc = mysql_query($query) or die("Select Failed! [302]");
