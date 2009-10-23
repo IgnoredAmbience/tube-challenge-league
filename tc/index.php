@@ -1,5 +1,4 @@
 <?php
-	if(!empty($_GET)) {extract($_GET);}
 	include('settings.php');
 	include('functions.php');
 	
