@@ -425,7 +425,7 @@
 					</table>
 				</td>
 			</tr>
-						<tr>
+			<tr>
 				<td>
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>  
@@ -453,7 +453,7 @@
 						</tr>
 					</table>
 				</td>
-						<td>&nbsp;</td>
+				<td>&nbsp;</td>
 			</tr>
 		 </table>
 		 <p>Please read my <a style="text-decoration: underline" href="missing/">appeal for missing data</a>.</p>
