@@ -1,37 +1,47 @@
 -- phpMyAdmin SQL Dump
--- version 2.8.2
+-- version 2.11.6
 -- http://www.phpmyadmin.net
--- 
+--
 -- Host: localhost
--- Generation Time: Oct 21, 2009 at 07:05 PM
--- Server version: 4.1.20
--- PHP Version: 5.2.8
--- 
--- Database: `Mcrivpro`
--- 
+-- Generation Time: Oct 23, 2009 at 10:53 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `dbtubechallengeleague`
+--
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `tc_challenge`
--- 
+--
 
 CREATE TABLE `tc_challenge` (
-  `tc_challenge` char(3) NOT NULL default '',
-  `tc_short_name` varchar(15) NOT NULL default '',
-  `tc_challenge_name` varchar(255) NOT NULL default '',
+  `tc_challenge` char(3) collate utf8_unicode_ci NOT NULL,
+  `tc_short_name` varchar(15) collate utf8_unicode_ci NOT NULL,
+  `tc_challenge_name` varchar(255) collate utf8_unicode_ci NOT NULL,
   `tc_station_count` int(4) NOT NULL default '0',
-  `tc_description` varchar(255) NOT NULL default '',
-  `tc_dates` varchar(255) NOT NULL default '',
-  `tc_uri` varchar(32) NOT NULL default '',
-  UNIQUE KEY `tc_challenge` (`tc_challenge`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `tc_description` varchar(255) collate utf8_unicode_ci NOT NULL,
+  `tc_dates` varchar(255) collate utf8_unicode_ci NOT NULL,
+  `tc_uri` varchar(32) collate utf8_unicode_ci NOT NULL,
+  PRIMARY KEY  (`tc_challenge`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 
+--
 -- Dumping data for table `tc_challenge`
--- 
+--
 
-INSERT INTO `tc_challenge` (`tc_challenge`, `tc_short_name`, `tc_challenge_name`, `tc_station_count`, `tc_description`, `tc_dates`, `tc_uri`) VALUES ('A11', 'All Lines', 'All Lines Challenge', 0, 'Complete a journey on each of the 11 lines as quickly as possible.', 'December 2007-present (since closure of ELL)', 'alllines'),
+INSERT INTO `tc_challenge` (`tc_challenge`, `tc_short_name`, `tc_challenge_name`, `tc_station_count`, `tc_description`, `tc_dates`, `tc_uri`) VALUES
+('A11', 'All Lines', 'All Lines Challenge', 0, 'Complete a journey on each of the 11 lines as quickly as possible.', 'December 2007-present (since closure of ELL)', 'alllines'),
 ('A12', 'All Lines', 'All Lines Challenge', 0, 'Complete a journey on each of the 12 lines as quickly as possible', 'Until December 2007 (before ELL closure)', 'alllines'),
 ('D38', 'DLR', 'Docklands Light Railway Challenge', 38, 'Visit every station on the DLR by DLR train as quickly as possible', 'Until December 2007 (prior to opening of Langdon Park)', 'dlr'),
 ('D39', 'DLR', 'Docklands Light Railway Challenge', 39, 'Visit every station on the DLR by DLR train as quickly as possible', 'December 2007-June 2008', 'dlr'),
