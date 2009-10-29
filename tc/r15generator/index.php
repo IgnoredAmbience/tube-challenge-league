@@ -28,17 +28,17 @@
 				</p>
 				<table>
 					<tr>
-						<td rowspan="5"><b>Include:</b></td>
+						<td rowspan="6"><b>Include:</b></td>
 						<td>London Underground</td>
-						<td><input type="checkbox" name="is_lu_yn" checked="checked" /></td>
+						<td><input type="checkbox" name="lu" checked="checked" /></td>
 					</tr>
 					<tr>
 						<td>London Overground</td>
-						<td><input type="checkbox" name="is_lo_yn" /></td>
+						<td><input type="checkbox" name="lo" /></td>
 					</tr>
 					<tr>
 						<td>Docklands Light Railway</td>
-						<td><input type="checkbox" name="is_dlr_yn" /></td>
+						<td><input type="checkbox" name="dlr" /></td>
 					</tr>
 					<tr>
 						<td>Tramlink</td>
@@ -47,6 +47,10 @@
 					<tr>
 						<td>National Rail</td>
 						<td><input type="checkbox" name="is_nr_yn" /></td>
+					</tr>
+					<tr>
+						<td>Watford Junction</td>
+						<td><input type="checkbox" name="wj" /></td>
 					</tr>
 					<tr class="location">
 						<td rowspan="2"><b>Location:</b></td>
@@ -80,8 +84,11 @@
 				<input type="hidden" name="no" value="<?php echo $no; ?>" />
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
 				<input type="hidden" name="max" value="<?php echo $max; ?>" />
-				<input type="hidden" name="is_lu_yn" value="<?php echo $is_lu_yn; ?>" />
-				<input type="hidden" name="is_dlr_yn" value="<?php echo $is_dlr_yn; ?>" />
+				<input type="hidden" name="lu" value="<?php echo $lu; ?>" />
+				<input type="hidden" name="lo" value="<?php echo $lo; ?>" />
+				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
+				<input type="hidden" name="tl" value="<?php echo $tl; ?>" />
+				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
 				<p>Fix my starting station at:
 					<select name="start">
 						<option value="-1">(none)</option>
@@ -96,9 +103,15 @@
 		$smin = $min - 0.5;
 
 		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND (";
-		if($is_lu_yn == "on") {$query .= " is_lu_yn = 'Y'";}
-		if($is_lu_yn == "on" && $is_dlr_yn == "on") {$query .= " OR";}
-		if($is_dlr_yn == "on") {$query .= " is_dlr_yn = 'Y'";}
+		if($lu) {$query .= "is_lu_yn = 'Y'";}
+		if($lu && $lo) {$query .= " OR ";}
+		if($lo) {$query .= "is_lo_yn = 'Y'";}
+		if($lo && $dlr) {$query .= " OR ";}
+		if($dlr) {$query .= "is_dlr_yn = 'Y'";}
+		if($dlr && $tl) {$query .= " OR ";}
+		if($tl) {$query .= "is_tl_yn = 'Y'";}
+		if($tl && $nr) {$query .= " OR ";}
+		if($nr) {$query .= "is_nr_yn = 'Y'";}
 		$query .= ") ORDER BY tc_station_name";
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
 
@@ -134,8 +147,8 @@
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
 				<input type="hidden" name="max" value="<?php echo $max; ?>" />
 				<input type="hidden" name="start" value="<?php echo $start; ?>" />
-				<input type="hidden" name="is_lu_yn" value="<?php echo $is_lu_yn; ?>" />
-				<input type="hidden" name="is_dlr_yn" value="<?php echo $is_dlr_yn; ?>" />
+				<input type="hidden" name="lu" value="<?php echo $lu; ?>" />
+				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
 				<p>
 					<input type="submit" name="next" value="Next Step" />
 					<input type="submit" name="cancel" value="Start Over" />
@@ -148,9 +161,9 @@
 		$smin = $min - 0.5;
 
 		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND tc_station_id != $start AND (";
-		if($is_lu_yn == "on") {$query .= " is_lu_yn = 'Y'";}
-		if($is_lu_yn == "on" && $is_dlr_yn == "on") {$query .= " OR";}
-		if($is_dlr_yn == "on") {$query .= " is_dlr_yn = 'Y'";}
+		if($lu == "on") {$query .= " is_lu_yn = 'Y'";}
+		if($lu == "on" && $dlr == "on") {$query .= " OR";}
+		if($dlr == "on") {$query .= " is_dlr_yn = 'Y'";}
 		$query .= ") ORDER BY tc_station_name";
 		$fnc = mysql_query($query) or die("Select Failed! [000]");
 
@@ -190,8 +203,8 @@
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
 				<input type="hidden" name="max" value="<?php echo $max; ?>" />
 				<input type="hidden" name="start" value="<?php echo $start; ?>" />
-				<input type="hidden" name="is_lu_yn" value="<?php echo $is_lu_yn; ?>" />
-				<input type="hidden" name="is_dlr_yn" value="<?php echo $is_dlr_yn; ?>" />
+				<input type="hidden" name="lu" value="<?php echo $lu; ?>" />
+				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
 <?php
 		$query = "SELECT * FROM tc_stations WHERE tc_station_id = $start";
 		$fnc = mysql_query($query) or die("Select Failed! [000]");
@@ -199,7 +212,7 @@
 
 ?>
 				<p>You are about to generate <b><?php echo $no; ?></b> random stations with the following criteria:</p>
-				<p>Networks used: <b><?php if($is_lu_yn == "on") { ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br />
+				<p>Networks used: <b><?php if($lu == "on") { ?>LU<?php } if($lu == "on" && $dlr == "on"){ ?>, <?php } if($dlr == "on"){ ?>DLR<?php } ?></b><br />
 				Starting station: <b><?php if($start == -1){ ?>random<?php } elseif($start == -2){ ?>Aldwych<?php } else { echo $result['tc_station_name']; } ?></b><br />
 				Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br />
 <?php
@@ -242,7 +255,7 @@
 		$result = mysql_fetch_array($fnc);
 ?>
 				<p>Here are your <b><?php echo $no; ?></b> random stations, drawn using the following criteria:</p>
-				<p>Networks used: <b><?php if($is_lu_yn == "on"){ ?>LU<?php } if($is_lu_yn == "on" && $is_dlr_yn == "on"){ ?>, <?php } if($is_dlr_yn == "on"){ ?>DLR<?php } ?></b><br />
+				<p>Networks used: <b><?php if($lu == "on"){ ?>LU<?php } if($lu == "on" && $dlr == "on"){ ?>, <?php } if($dlr == "on"){ ?>DLR<?php } ?></b><br />
 				Starting station: <b><?php if($start == -1){ ?>random<?php } elseif($start == -2){ ?>Aldwych<?php } else { $starter = $result['tc_station_name']; echo $starter; } ?></b><br />
 				Zone<?php if($max > $min){ ?>s<?php } ?> used: <b><?php echo $min; if($max > $min){?>-<?php echo $max; } ?></b><br />
 <?php
@@ -277,9 +290,9 @@
 		}
 									
 		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND tc_station_id NOT IN ($exlist) AND (";
-		if($is_lu_yn == "on") {$query .= " is_lu_yn = 'Y'";}
-		if($is_lu_yn == "on" && $is_dlr_yn == "on") {$query .= " OR";}
-		if($is_dlr_yn == "on") {$query .= " is_dlr_yn = 'Y'";}
+		if($lu == "on") {$query .= " is_lu_yn = 'Y'";}
+		if($lu == "on" && $dlr == "on") {$query .= " OR";}
+		if($dlr == "on") {$query .= " is_dlr_yn = 'Y'";}
 		$query .= ") ORDER BY RAND() LIMIT $no";
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
 		$fncpos = 0;
