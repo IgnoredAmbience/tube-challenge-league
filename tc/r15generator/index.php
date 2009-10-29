@@ -48,12 +48,12 @@
 						<td>National Rail</td>
 						<td><input type="checkbox" name="is_nr_yn" /></td>
 					</tr>
-					<tr bgcolor="#eeeeff">
+					<tr class="location">
 						<td rowspan="2"><b>Location:</b></td>
 						<td>North of the river</td>
 						<td><input type="checkbox" name="north" checked="checked" /></td>
 					</tr>
-					<tr bgcolor="#eeeeff">
+					<tr class="location">
 						<td>South of the river</td>
 						<td><input type="checkbox" name="south" checked="checked" /></td>
 					</tr>
