@@ -42,11 +42,11 @@
 					</tr>
 					<tr>
 						<td>Tramlink</td>
-						<td><input type="checkbox" name="is_tl_yn" /></td>
+						<td><input type="checkbox" name="tl" /></td>
 					</tr>
 					<tr>
 						<td>National Rail</td>
-						<td><input type="checkbox" name="is_nr_yn" /></td>
+						<td><input type="checkbox" name="nr" /></td>
 					</tr>
 					<tr>
 						<td>Watford Junction</td>
@@ -89,6 +89,9 @@
 				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
 				<input type="hidden" name="tl" value="<?php echo $tl; ?>" />
 				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
+				<input type="hidden" name="wj" value="<?php echo $wj; ?>" />
+				<input type="hidden" name="nth" value="<?php echo $north; ?>" />
+				<input type="hidden" name="sth" value="<?php echo $south; ?>" />
 				<p>Fix my starting station at:
 					<select name="start">
 						<option value="-1">(none)</option>
@@ -103,15 +106,16 @@
 		$smin = $min - 0.5;
 
 		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND (";
-		if($lu) {$query .= "is_lu_yn = 'Y'";}
-		if($lu && $lo) {$query .= " OR ";}
-		if($lo) {$query .= "is_lo_yn = 'Y'";}
-		if($lo && $dlr) {$query .= " OR ";}
-		if($dlr) {$query .= "is_dlr_yn = 'Y'";}
-		if($dlr && $tl) {$query .= " OR ";}
-		if($tl) {$query .= "is_tl_yn = 'Y'";}
-		if($tl && $nr) {$query .= " OR ";}
+		if($lu) {$query .= "is_lu_yn = 'Y' OR ";}
+		if($lo) {$query .= "is_lo_yn = 'Y' OR ";}
+		if($dlr) {$query .= "is_dlr_yn = 'Y' OR ";}
+		if($tl) {$query .= "is_tl_yn = 'Y' OR ";}
 		if($nr) {$query .= "is_nr_yn = 'Y'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // cut back trailing "OR" if present at end of query
+		$query .= ") AND (";
+		if($north) {$query .= "location_ns = 'N' OR ";}
+		if($south) {$query .= "location_ns = 'S'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);}
 		$query .= ") ORDER BY tc_station_name";
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
 
@@ -146,9 +150,11 @@
 				<input type="hidden" name="no" value="<?php echo $no; ?>" />
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
 				<input type="hidden" name="max" value="<?php echo $max; ?>" />
-				<input type="hidden" name="start" value="<?php echo $start; ?>" />
 				<input type="hidden" name="lu" value="<?php echo $lu; ?>" />
+				<input type="hidden" name="lo" value="<?php echo $lo; ?>" />
 				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
+				<input type="hidden" name="tl" value="<?php echo $tl; ?>" />
+				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
 				<p>
 					<input type="submit" name="next" value="Next Step" />
 					<input type="submit" name="cancel" value="Start Over" />
