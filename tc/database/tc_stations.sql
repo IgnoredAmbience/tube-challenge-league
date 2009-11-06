@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2009 at 02:03 PM
+-- Generation Time: Nov 06, 2009 at 04:53 PM
 -- Server version: 5.1.30
 -- PHP Version: 5.2.8
 
@@ -278,7 +278,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (233, 'Hackney Wick', '2', 'N', 'N', 'N', 'Y', 'N', 'N'),
 (234, 'Hadley Wood', '6', 'N', 'Y', 'N', 'N', 'N', 'N'),
 (235, 'Hainault', '4', 'Y', 'N', 'N', 'N', 'N', 'N'),
-(236, 'Hammersmith [Cir/H&C]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
+(236, 'Hammersmith [H&C]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (237, 'Hammersmith [Dis/Pic]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (238, 'Hampstead', '2.5', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (239, 'Hampstead Heath', '2.5', 'N', 'N', 'N', 'Y', 'N', 'N'),
@@ -443,7 +443,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (398, 'Oval', '2', 'Y', 'N', 'N', 'N', 'N', 'S'),
 (399, 'Oxford Circus', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (400, 'Paddington [Bak/Cir/Dis]', '1', 'Y', 'Y', 'N', 'N', 'N', 'N'),
-(401, 'Paddington [Cir/H&C]', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
+(401, 'Paddington [H&C]', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (402, 'Palmers Green', '4', 'N', 'Y', 'N', 'N', 'N', 'N'),
 (403, 'Park Royal', '3', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (404, 'Parsons Green', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
