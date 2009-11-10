@@ -1,3 +1,6 @@
+<?php
+	// Simple League Page (with a bit of explanatory text)
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -43,7 +46,7 @@
 					<td class="row1" colspan="2"><?php echo $details['tc_dates']; ?></td>
 				</tr>
 			</table>
-			<p>A strange one to have on the site, as of course the time varies with stations drawn - but this also applies to some extent to other challenges with respect to starting station. It good to have a central location to store the times in any case. This site now has it's very own <a href="/r15generator/"><b>Random Stations Generator</b></a> which can be used to generate a set of stations for a R15 challenge...</p>
+			<p>A strange one to have on the site, as of course the time varies with stations drawn - but this also applies to some extent to other challenges with respect to starting station. It's good to have a central location to store the times in any case. This site now has its very own <a href="/r15generator/"><b>Random Stations Generator</b></a> which can be used to generate a set of stations for a R15 challenge...</p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
 				<tr class="newshead">  
 					<td width="20"></td>

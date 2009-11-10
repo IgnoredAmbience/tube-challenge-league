@@ -1,3 +1,6 @@
+<?php
+	// Complex League Page
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -75,7 +78,7 @@
 			</table><br />
 			<hr width="400" />
 <h3>Previous Configurations</h3>
-<p>Until December 2007 the East London Line formed part of the London Underground Network, and until it's removal, the South London Challenge included Wapping, Surrey Quays, New Cross &amp; New Cross Gate.</p>
+<p>Until December 2007 the East London Line formed part of the London Underground Network, and until its removal, the South London Challenge included Wapping, Surrey Quays, New Cross &amp; New Cross Gate.</p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
 				<tr class="newshead">  
 					<td width="20"></td>
