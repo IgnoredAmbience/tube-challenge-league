@@ -27,6 +27,7 @@
 					<td>&nbsp;</td>
 				</tr>
 <?php
+
 	$query = "SELECT * FROM tc_challenge WHERE tc_challenge = '$event'";
 	$moo = mysql_query($query) or die("Select Failed! [501]");
 	$details = mysql_fetch_array($moo)
@@ -49,7 +50,20 @@
 					<td class="row1" colspan="2"><?php echo $details['tc_dates']; ?></td>
 				</tr>
 			</table>
-			<p><?php echo $details['tc_extra_details']; ?></p>
+<?php
+	if($details['tc_extra_details'])
+	{
+		echo "<p>".$details['tc_extra_details']."</p>\n";
+	}
+	
+	$query = "SELECT * FROM tc_challenge WHERE tc_uri = '$challenge'";
+	$result = mysql_query($query) or die("Select Failed! [501]");
+	$count = mysql_num_rows($result);
+	if($count > 1)
+	{
+		echo "<h3>Current Configuration</h3>\n";
+	}	
+?>	
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
 				<tr class="newshead">
 					<td width="20"></td>

@@ -30,7 +30,7 @@
 							<td><?php echo $fncpos; ?>. <?php echo $fncdata['tc_name']; ?></td>
 							<td align="right"><?php echo $fncdata['tc_hours']; ?>:<?php if ($fncdata['tc_mins'] < 10){ ?>0<?php } echo $fncdata['tc_mins']; ?>:<?php if ($fncdata['tc_sec'] < 10){ ?>0<?php } echo $fncdata['tc_sec']; ?></td>
 						</tr>
-						<?php } $querya = "SELECT max(tc_date) FROM tc_data WHERE tc_challenge = '269'";
+						<?php } $querya = "SELECT max(tc_date) FROM tc_data WHERE tc_challenge in ('270', '269')";
 						$fncint = mysql_query($querya) or die("Select Failed! [301a]");
 						?>
 						<tr>
@@ -198,7 +198,7 @@
 						$fncint = mysql_query($querya) or die("Select Failed! [301a]");
 						?>
 						<tr>
-							<td colspan="2" align="right"><i><a href="random15/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a> + <a href="r15generator/">R15 Generator</a></i></td>
+							<td colspan="2" align="right"><i><a href="random15/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a> + <b><a href="r15generator/">R15 Generator</a></b></i></td>
 						</tr>
 					</table>
 				</td>
@@ -317,10 +317,10 @@
 				<td>
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>  
-							<td class="newshead" colspan="2"><a href="129snake/league/">128 Snake Challenge</a></td>
+							<td class="newshead" colspan="2"><a href="snake/league/">128 Snake Challenge</a></td>
 						</tr>
 						<?php
-							$query00 = "SELECT * FROM tc_data WHERE tc_challenge = 'SK2' ORDER BY tc_hours, tc_mins, tc_sec LIMIT 3";
+							$query00 = "SELECT * FROM tc_data WHERE tc_challenge = '128' ORDER BY tc_hours, tc_mins, tc_sec LIMIT 3";
 							$snk = mysql_query($query00) or die("Select Failed! [307]");
 
 							$snkpos = 0;
@@ -333,11 +333,11 @@
 							<td><?php echo $snkpos; ?>. <?php echo $snkdata['tc_name']; ?></td>
 							<td align="right"><?php echo $snkdata['tc_hours']; ?>:<?php if ($snkdata['tc_mins'] < 10){ ?>0<?php } echo $snkdata['tc_mins']; ?>:<?php if ($snkdata['tc_sec'] < 10){ ?>0<?php } echo $snkdata['tc_sec']; ?></td>
 						</tr>
-						<?php } $querya = "SELECT max(tc_date) FROM tc_data WHERE tc_challenge = 'SK2'";
+						<?php } $querya = "SELECT max(tc_date) FROM tc_data WHERE tc_challenge = '128'";
 						$fncint = mysql_query($querya) or die("Select Failed! [301a]");
 						?>
 						<tr>
-							<td colspan="2" align="right"><i><a href="129snake/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a></i></td>
+							<td colspan="2" align="right"><i><a href="snake/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a></i></td>
 						</tr>
 					</table>
 				</td>
@@ -400,7 +400,7 @@
 						<td>
 					<table width="100%" border="0" cellpadding="0" cellspacing="0">
 						<tr>  
-							<td class="newshead" colspan="2"><a href="zone12/league/">Zones 1 &amp; 2 Challenge</a></td>
+							<td class="newshead" colspan="2"><a href="zones1-2/league/">Zones 1 &amp; 2 Challenge</a></td>
 						</tr>
 						<?php
 							$query00 = "SELECT * FROM tc_data WHERE tc_challenge = 'Z12' ORDER BY tc_hours, tc_mins, tc_sec LIMIT 3";
@@ -420,7 +420,7 @@
 						$fncint = mysql_query($querya) or die("Select Failed! [301a]");
 						?>
 						<tr>
-							<td colspan="2" align="right"><i><a href="zone12/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a></i></td>
+							<td colspan="2" align="right"><i><a href="zones1-2/league/">&#8230;click for full details. Last updated: <?php echo date("d.m.Y", strtotime(mysql_result($fncint, 0))); ?></a></i></td>
 						</tr>
 					</table>
 				</td>
@@ -457,7 +457,7 @@
 			</tr>
 		 </table>
 		 <p>Please read my <a style="text-decoration: underline" href="missing/">appeal for missing data</a>.</p>
-		 <p>I intend to <a href="shopping-list/">introduce some more features</a> in due course. In the meantime, please email all new data and corrections to <a href="mailto:tube@scriv.me.uk?subject=Welcome">tube&#64;scriv.me.uk</a>.</p>
+		 <p>I intend to <a href="shopping-list/">introduce some more features</a> in due course. In the meantime, please email all new data and corrections to <a href="mailto:tube@scriv.me.uk?subject=Tube Challenge League Tables">tube&#64;scriv.me.uk</a>.</p>
 		</div>
 	</body>
 </html>
