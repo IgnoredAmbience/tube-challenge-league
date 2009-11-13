@@ -24,7 +24,7 @@
 					<td>&nbsp;</td>
 				</tr>
 					<?php
-					$query = "SELECT * FROM tc_challenge WHERE tc_challenge = 'SK2'";
+					$query = "SELECT * FROM tc_challenge WHERE tc_challenge = '128'";
 					$moo = mysql_query($query) or die("Select Failed! [501]");
 					$details = mysql_fetch_array($moo)
 					?>
@@ -56,7 +56,7 @@
 					<td width="150">Event</td>
 				</tr>
 				<?php
-					$query = "SELECT * FROM tc_data WHERE tc_challenge = 'SK2' AND tc_fn_station_count is null ORDER BY tc_hours, tc_mins, tc_sec";
+					$query = "SELECT * FROM tc_data WHERE tc_challenge = '128' AND tc_fn_station_count is null ORDER BY tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 
 					$fncpos = 0;
@@ -75,7 +75,7 @@
 				<?php } if($fncpos > 1){ ?>
 				<tr>
 					<td colspan="6">&nbsp;</td>
-				</tr><?php } $query = "SELECT * FROM tc_data WHERE tc_challenge = 'SK2' AND tc_fn_station_count is not null ORDER BY tc_fn_station_count desc, tc_hours, tc_mins, tc_sec";
+				</tr><?php } $query = "SELECT * FROM tc_data WHERE tc_challenge = '128' AND tc_fn_station_count is not null ORDER BY tc_fn_station_count desc, tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 
 					while ($fncdata = mysql_fetch_array($fnc)) {
@@ -102,7 +102,7 @@
 					<td width="150">Event</td>
 				</tr>
 				<?php
-					$query = "SELECT * FROM tc_data WHERE tc_challenge = 'SNK' ORDER BY tc_hours, tc_mins, tc_sec";
+					$query = "SELECT * FROM tc_data WHERE tc_challenge = '129' ORDER BY tc_hours, tc_mins, tc_sec";
 					$fnc = mysql_query($query) or die("Select Failed! [302]");
 
 					$fncpos = 0;
