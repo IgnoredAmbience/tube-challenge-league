@@ -1,8 +1,8 @@
 <?php
 	$challenge = $_GET['challenge'];
 	if(!$challenge) {$challenge = "fullnetwork";} // default value if none given
-	include('../settings.php');
-	include('../functions.php');
+	include('settings.php');
+	include('functions.php');
 	
 	// Get info from $challenge to build rest of page
 
@@ -13,7 +13,7 @@
 	$now = date("U");
 	$event = $details['tc_challenge'];	
 	$page_title = $details['tc_challenge_name'];	
-	$directory_depth = 1;
+	$directory_depth = 0;
 	$type = "event";
 	display_header($page_title, $directory_depth); 
 	display_menu($directory_depth);
@@ -49,9 +49,9 @@
 					<td class="row1" colspan="2"><?php echo $details['tc_dates']; ?></td>
 				</tr>
 			</table>
-			<br />
+			<p><?php echo $details['tc_extra_details']; ?></p>
 			<table align="center" border="0" cellpadding="1" cellspacing="0">
-				<tr class="newshead">  
+				<tr class="newshead">
 					<td width="20"></td>
 					<td>Name</td>
 					<td width="75" align="right">Time&nbsp;</td>
