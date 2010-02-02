@@ -22,6 +22,7 @@
 	
 	function display_menu($directory_depth)
 	{
+		$depth = "";
 		echo "\t\t<div id=\"header3\">\n";
 		echo "\t\t\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
 		echo "\t\t\t\t<tr style=\"text-align: center\">\n";
@@ -41,6 +42,7 @@
 	
 	function display_submenu($type, $directory_depth)
 	{
+		$depth = "";
 		echo "\t\t<div id=\"header4\">\n";
 		echo "\t\t\t<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n";
 		echo "\t\t\t\t<tr style=\"text-align: center\">\n";
