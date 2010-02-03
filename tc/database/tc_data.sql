@@ -1,31 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.1
+-- version 2.8.2
 -- http://www.phpmyadmin.net
---
+-- 
 -- Host: localhost
--- Generation Time: Nov 13, 2009 at 02:59 PM
--- Server version: 5.1.30
+-- Generation Time: Feb 03, 2010 at 07:13 PM
+-- Server version: 4.1.20
 -- PHP Version: 5.2.8
-
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `dbtubechallengeleague`
---
+-- 
+-- Database: `Mcrivpro`
+-- 
 
 -- --------------------------------------------------------
 
---
+-- 
 -- Table structure for table `tc_data`
---
+-- 
 
-CREATE TABLE IF NOT EXISTS `tc_data` (
+CREATE TABLE `tc_data` (
   `tc_challenge` char(3) COLLATE utf8_unicode_ci NOT NULL,
   `tc_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `tc_hours` tinyint(2) NOT NULL DEFAULT '0',
@@ -41,14 +32,13 @@ CREATE TABLE IF NOT EXISTS `tc_data` (
   `tc_upd_id` char(3) COLLATE utf8_unicode_ci NOT NULL,
   `tc_upd_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`tc_uid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=486 ;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=510 ;
 
---
+-- 
 -- Dumping data for table `tc_data`
---
+-- 
 
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
-('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Matt Nunn', 0, 39, 46, NULL, '2008-02-07', NULL, NULL, NULL, 8, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Kevin &amp; Ryan Brown, Ann Howell &amp; John Stark', 0, 42, 4, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 9, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Antony &amp; Phil Brown', 0, 46, 11, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 10, 'N', 'Mig', '0000-00-00 00:00:00'),
@@ -414,10 +404,10 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('A11', '&#8220;justjack314&#8221;', 1, 2, 48, NULL, '2008-09-26', NULL, NULL, NULL, 365, 'N', 'MJS', '2008-09-28 23:12:16'),
 ('275', 'Ric Brackenbury, David Scard &amp; Tony Bell', 19, 54, 29, NULL, '2005-08-25', NULL, NULL, 'N', 366, 'N', 'MJS', '2008-09-28 23:37:48'),
 ('Z1C', 'Kevin &amp; Jamie Brown', 3, 26, 35, 'Barbican Z1', '2006-09-01', NULL, NULL, NULL, 367, 'N', 'MJS', '2008-10-07 22:55:38'),
-('129', 'Damian Cook', 5, 55, 41, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 368, 'N', 'MJS', '0000-00-00 00:00:00'),
-('129', 'Kevin &amp; Jamie Brown', 6, 3, 38, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 369, 'N', 'MJS', '0000-00-00 00:00:00'),
-('129', 'Peter Smyth', 6, 9, 39, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 370, 'N', 'MJS', '0000-00-00 00:00:00'),
-('129', 'John Stark', 6, 13, 9, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 371, 'N', 'MJS', '0000-00-00 00:00:00'),
+('SNK', 'Damian Cook', 5, 55, 41, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 368, 'N', 'MJS', '2008-10-07 23:15:55'),
+('SNK', 'Kevin &amp; Jamie Brown', 6, 3, 38, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 369, 'N', 'MJS', '2008-10-07 23:15:55'),
+('SNK', 'Peter Smyth', 6, 9, 39, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 370, 'N', 'MJS', '2008-10-07 23:17:15'),
+('SNK', 'John Stark', 6, 13, 9, '129 Snake Challenge', '2006-09-01', NULL, NULL, NULL, 371, 'N', 'MJS', '2008-10-07 23:17:15'),
 ('POC', 'John Stark', 6, 54, 56, 'Points of Compass I', '2007-02-16', NULL, NULL, NULL, 372, 'N', 'MJS', '2008-10-08 19:24:39'),
 ('POC', 'Antony Brown', 8, 13, 43, 'Points of Compass I', '2007-02-16', NULL, NULL, NULL, 373, 'N', 'MJS', '2008-10-08 19:24:39'),
 ('POC', 'Damian &amp; Matthew Cook', 8, 13, 43, 'Points of Compass I', '2007-02-16', NULL, NULL, NULL, 374, 'N', 'MJS', '2008-10-08 19:26:20'),
@@ -428,16 +418,15 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('Z12', 'Peter Smyth', 6, 51, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 379, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Matthew Scrivin &amp; Steven Karahan', 7, 18, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 380, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Kevin Brown', 7, 56, 29, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 381, 'N', 'MJS', '2008-11-09 11:08:50');
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
-('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Alistair Brown', 8, 9, 40, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 383, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Martin Hazel', 8, 35, 15, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 384, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('270', 'Antony, Kevin, Phil &amp; Jamie Brown, Matthew Scrivin &amp; Pudsey', 17, 41, 43, 'Children in Need 2008', '2008-11-14', NULL, NULL, NULL, 385, 'N', 'MJS', '2008-11-16 13:46:39'),
 ('270', 'Damian &amp; Matthew Cook', 17, 41, 43, 'Children in Need 2008', '2008-11-14', NULL, NULL, NULL, 386, 'N', 'MJS', '2008-11-16 13:46:39'),
 ('270', 'Andi James, Sara Wearn &amp; Martin Hazel', 18, 15, 31, 'Children in Need 2008', '2008-11-14', NULL, NULL, NULL, 387, 'N', 'MJS', '2008-11-16 13:57:34'),
 ('270', 'Ryan Brown', 10, 17, 0, 'Children in Need 2008', '2008-11-14', 175, NULL, NULL, 388, 'N', 'MJS', '2008-11-16 13:57:34'),
-('128', 'Peter Smyth &amp; James &#8220;mullardo&#8221;', 6, 26, 24, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 466, 'N', 'MJS', '0000-00-00 00:00:00'),
-('128', 'Thomas Wood &amp; Philip Brown', 6, 36, 42, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 465, 'N', 'MJS', '0000-00-00 00:00:00'),
+('SK2', 'Peter Smyth &amp; James &#8220;mullardo&#8221;', 6, 26, 24, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 466, 'N', 'MJS', '2009-08-22 09:50:51'),
+('SK2', 'Thomas Wood &amp; Philip Brown', 6, 36, 42, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 465, 'N', 'MJS', '2009-08-22 09:50:51'),
 ('R15', 'Peter Smyth', 3, 4, 48, 'Christmas R15 2008', '2008-12-06', NULL, NULL, NULL, 391, 'N', 'MJS', '2008-12-08 08:52:34'),
 ('R15', 'Matt Nunn &amp; Steven Karahan', 3, 9, 56, 'Christmas R15 2008', '2008-12-06', NULL, NULL, NULL, 392, 'N', 'MJS', '2008-12-08 08:52:34'),
 ('R15', 'Kevin Brown &amp; Matthew Scrivin', 3, 12, 29, 'Christmas R15 2008', '2008-12-06', NULL, NULL, NULL, 393, 'N', 'MJS', '2008-12-08 08:55:09'),
@@ -512,7 +501,7 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('Z1C', 'John Stark', 3, 9, 6, 'Return of the Evening Zone 1', '2009-08-18', NULL, NULL, NULL, 462, 'N', 'MJS', '2009-08-19 09:45:47'),
 ('Z1C', 'Peter Smyth', 3, 11, 41, 'Return of the Evening Zone 1', '2009-08-18', NULL, NULL, NULL, 463, 'N', 'MJS', '2009-08-19 09:46:44'),
 ('Z1C', 'Kevin &amp; Ryan Brown', 3, 17, 46, 'Return of the Evening Zone 1', '2009-08-18', NULL, NULL, NULL, 464, 'N', 'mjs', '2009-08-19 19:09:24'),
-('128', 'Steven Karahan &amp; Kevin Brown', 6, 24, 33, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 467, 'N', 'MJS', '0000-00-00 00:00:00'),
+('SK2', 'Steven Karahan &amp; Kevin Brown', 6, 24, 33, '128 Snake Challenge', '2009-07-24', NULL, NULL, NULL, 467, 'N', 'MJS', '2009-08-30 20:49:37'),
 ('270', 'Andi James, Hassan Chagani, Paul Berry, Simon Hollett &amp; Chris Marshall', 17, 28, 57, NULL, '2009-09-14', NULL, NULL, 'N', 468, 'N', 'MJS', '2009-09-25 12:39:37'),
 ('MOU', 'John Stark &amp; Antony Brown', 1, 34, 46, NULL, '2009-09-19', NULL, NULL, NULL, 469, 'N', 'MJS', '2009-09-19 19:38:06'),
 ('MOU', 'Martin Hazel', 1, 36, 27, 'Cannon Street Run IV', '2009-09-24', NULL, NULL, NULL, 470, 'N', 'MJS', '2009-09-25 08:07:10'),
@@ -530,4 +519,27 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('R15', 'Martin Hazel', 2, 30, 16, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 482, 'N', 'MJS', '2009-10-18 12:45:02'),
 ('R15', 'Thomas Wood &amp; Hajime Urata', 2, 30, 34, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 483, 'N', 'MJS', '2009-10-18 12:45:02'),
 ('R15', 'Al Brown &amp; Steven Karahan', 2, 32, 55, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 484, 'N', 'MJS', '2009-10-18 12:46:13'),
-('R15', 'Adam &amp; Ian Jones', 4, 27, 0, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 485, 'N', 'MJS', '2009-10-18 12:46:13');
+('R15', 'Adam &amp; Ian Jones', 4, 27, 0, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 485, 'N', 'MJS', '2009-10-18 12:46:13'),
+('270', 'Kevin &amp; Al Brown, Peter Smyth, Andi James &amp; Damian Cook', 16, 23, 32, NULL, '2009-10-28', 240, NULL, 'N', 486, 'N', 'MJS', '2009-11-04 17:03:40'),
+('270', 'Sam Cawley &amp; Matthew Scrivin', 18, 1, 18, NULL, '2009-10-30', 254, NULL, 'N', 487, 'N', 'MJS', '2009-11-04 17:03:40'),
+('270', 'Andi James', 17, 44, 39, NULL, '2009-11-13', NULL, NULL, 'N', 488, 'N', 'MJS', '2009-11-23 12:28:52'),
+('270', 'Antony, Kevin &amp; Jamie Brown, &amp; Pudsey', 17, 18, 55, 'Children in Need 2009', '2009-11-20', NULL, NULL, 'N', 489, 'N', 'MJS', '2009-11-23 12:28:52'),
+('270', 'Sam Cawley &amp; Matthew Scrivin', 16, 41, 16, 'Children in Need 2009', '2009-11-20', 254, NULL, 'N', 490, 'N', 'MJS', '2009-11-23 12:35:02'),
+('270', 'Sam Cawley &amp; Matthew Scrivin', 0, 6, 46, 'Children in Need 2009', '2009-11-20', 2, NULL, 'N', 491, 'N', 'MJS', '2009-11-23 12:35:02'),
+('270', 'Andi James, Steve Wilson &amp; James &#8220;mullardo&#8221;', 0, 6, 46, 'Children in Need 2009', '2009-11-20', 2, NULL, 'N', 492, 'N', 'MJS', '2009-11-23 12:35:51'),
+('270', 'Andi James, Steve Wilson &amp; James &#8220;mullardo&#8221;', 13, 36, 18, 'Children in Need 2009', '2009-11-20', 215, NULL, 'N', 493, 'N', 'MJS', '2009-11-25 09:52:56'),
+('270', 'Sam Cawley', 17, 2, 23, NULL, '2009-12-04', NULL, NULL, NULL, 494, 'N', 'MJS', '2009-12-06 15:21:19'),
+('R15', 'Steven Karahan &amp; Thomas Wood', 2, 56, 9, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 495, 'N', 'MJS', '2009-12-06 15:24:16'),
+('R15', 'Peter Smyth', 3, 6, 57, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 496, 'N', 'MJS', '2009-12-06 15:24:16'),
+('R15', 'John Stark, Antony &amp; Kevin Brown', 3, 10, 46, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 497, 'N', 'MJS', '2009-12-06 15:28:08'),
+('R15', 'Martin Hazel', 3, 16, 6, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 499, 'N', 'MJS', '2009-12-06 15:28:08'),
+('R15', 'Andi James &amp; Sara Wearn', 3, 22, 52, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 500, 'N', 'MJS', '2009-12-06 15:26:46'),
+('R15', 'Richie Graham', 4, 4, 51, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 501, 'N', 'MJS', '2009-12-06 15:27:17'),
+('270', 'Andi James, Martin Hazel &amp; Steve Wilson', 16, 44, 16, NULL, '2009-12-14', NULL, NULL, NULL, 502, 'N', 'MJS', '2009-12-16 14:28:09'),
+('PRK', 'Peter Smyth', 7, 46, 54, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 503, 'N', 'MJS', '2010-01-18 14:45:47'),
+('PRK', 'Kevin Brown, Steven Karahan &amp; Matt Nunn', 7, 48, 35, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 504, 'N', 'MJS', '2010-01-18 14:49:40'),
+('PRK', 'Martin Hazel', 8, 14, 0, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 505, 'N', 'MJS', '2010-01-18 14:48:15'),
+('PRK', 'Thomas Wood (&amp; Philip Brown)', 8, 39, 31, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 506, 'N', 'MJS', '2010-01-18 14:48:15'),
+('PRK', 'Oliver &amp; Mark Lewisohn', 8, 47, 19, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 507, 'N', 'MJS', '2010-01-18 14:49:09'),
+('PRK', 'Hassan Chagani', 8, 51, 33, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 508, 'N', 'MJS', '2010-01-18 14:49:40'),
+('BOT', '&#8220;timwakeling&#8221;', 2, 10, 40, NULL, '2009-12-11', NULL, NULL, NULL, 509, 'N', 'MJS', '2010-01-18 14:53:03');
