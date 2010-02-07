@@ -6,11 +6,82 @@
 	$page_title = "Welcome";
 	$directory_depth = 0;
 	$type = "main";
-	display_header($page_title, $directory_depth); 
-	display_menu($directory_depth);
-	display_submenu($type, $directory_depth);
 ?>
-	<div id="content">
+<!-- Start notification block; remove this when everyone's got the message -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Tube Challenge League Tables</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" title="Default" type="text/css" href="default.css" />
+		<script language="JavaScript" type="text/javascript">
+			<!-- Copyright 2003, Sandeep Gangadharan -->
+			<!-- For more free scripts go to http://sivamdesign.com/scripts/ -->
+			var y1 = 20; // change the # on the left to adjust the Y co-ordinate
+			(document.getElementById) ? dom = true : dom = false;
+			
+			function hideIt()
+			{
+				if (dom) {document.getElementById("layer1").style.visibility='hidden';}
+			}
+			
+			function showIt()
+			{
+				if (dom) {document.getElementById("layer1").style.visibility='visible';}
+			}
+
+			function placeIt()
+			{
+				if (dom && !document.all) {document.getElementById("layer1").style.top = window.pageYOffset + (window.innerHeight - (window.innerHeight-y1)) + "px";}
+				if (document.all) {document.all["layer1"].style.top = document.documentElement.scrollTop + (document.documentElement.clientHeight - (document.documentElement.clientHeight-y1)) + "px";}
+				window.setTimeout("placeIt()", 10);
+			}
+		</script>
+	</head>
+<?php
+	if($_COOKIE['popup'] != "1")
+	{
+		echo "\t<body onLoad=\"placeIt(); showIt()\">\n";
+	}
+	else
+	{
+		echo "\t<body>\n";
+	}
+?>
+	<div id="layer1" style="position:absolute; left:20px; width:640px; height:60px; visibility:hidden; z-index:1">
+		<div style="float:left; background-color:#ffcccc; padding:2px; border:1px solid black">
+			<span style="float:right; background-color:#ffcccc; width='20px'; text-align:center; cursor:pointer" onClick="window.location='cookie.php'">&nbsp;<img src="cross.png" alt="Close" title="Close">&nbsp;</span>
+			Tube Challenge League Tables are now being hosted on tc.pberry.me.uk&nbsp;
+		</div>
+	</div>
+<!-- End notification block -->
+	<div id="temps" style="z-index:0">Page generated at: 10:56,&nbsp;05.02.10&nbsp;[<a class="text" href="javascript:location.reload()">refresh?</a>]&nbsp;</div>
+
+	<div id="header1" style="z-index:0">&nbsp;Tube Challenge League Tables</div>
+	<div id="header2" style="z-index:0">Welcome&nbsp;</div>
+	<div id="header3" style="z-index:0">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr style="text-align: center">
+				<td class="header3" width="25%"><a href=".">&#187; Home &#171;</a></td>
+				<td class="header3" width="25%"><a href="events/">&#187; Events &#171;</a></td>
+
+				<td class="header3" width="25%"><a href="challengers/">&#187; Challengers &#171;</a></td>
+				<td class="header3" width="25%"><a href="http://darts.scriv.me.uk/">&#187; Darts &#171;</a></td>
+			</tr>
+		</table>
+	</div>
+	<div id="header4" style="z-index:0">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+			<tr style="text-align: center">
+				<td class="header3" width="33%"><a href="missing/">&#187; Appeal &#171;</a></td>
+				<td class="header3" width="34%"><a href="latest/">&#187; Latest Times &#171;</a></td>
+				<td class="header3" width="33%"><a href="statistics/">&#187; Statistics &#171;</a></td>
+			</tr>
+		</table>
+
+	</div>
+	<div id="content" style="z-index:0">
 		<p>Welcome to the Tube Challenge League Tables website. The top 3 in each currently open category are shown below - click through to see full league tables and previous configurations. <b><a href="http://darts.scriv.me.uk/">Darts statistics</a></b> are housed on their own <a href="http://darts.scriv.me.uk/">separate website</a>.</p>
 		<table width="100%" cellspacing="10">
 			<tr>
