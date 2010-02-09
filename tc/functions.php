@@ -1,5 +1,5 @@
 <?php
-	function display_header($page_title, $directory_depth)
+	function display_header($page_title, $directory_depth, $script)
 	{
 		echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
 		echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">\n";
@@ -13,6 +13,12 @@
 			$directory_depth--;
 		}
 		echo "default.css\" />\n";
+		if($script)
+		{
+			echo "\t\t<script language=\"javascript\">\n";
+			include "$script";
+			echo "\t\t</script>\n";
+		}
 		echo "\t</head>\n";
 		echo "\t<body>\n";
 		echo "\t\t<div id=\"temps\">Page generated at: ".date("H:i").",&nbsp;".date("d.m.y")."&nbsp;[<a class=\"text\" href=\"javascript:location.reload()\">refresh?</a>]&nbsp;</div>\n";
