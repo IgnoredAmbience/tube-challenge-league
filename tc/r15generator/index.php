@@ -29,7 +29,7 @@
 				</p>
 				<table>
 					<tr>
-						<td rowspan="7"><b>Include:</b></td>
+						<td rowspan="5"><b>Networks:</b></td>
 						<td>London Underground</td>
 						<td><input type="checkbox" name="lu" checked="checked" onClick="Change()" /></td>
 					</tr>
@@ -49,20 +49,21 @@
 						<td>National Rail</td>
 						<td><input type="checkbox" name="nr" onClick="Change()" /></td>
 					</tr>
-					<tr>
+					<tr class="extensions">
+						<td rowspan="2"><b>Extensions:</b></td>
 						<td>Watford Junction</td>
 						<td><input type="checkbox" name="wj" onClick="Change()" /></td>
 					</tr>
-					<tr>
+					<tr class="extensions">
 						<td><abbr title="Chafford Hundred, Grays, Ockendon, Purfleet">Essex Group</abbr></td>
 						<td><input type="checkbox" name="eg" onClick="Change()" /></td>
 					</tr>
-					<tr class="location">
-						<td rowspan="2"><b>Location:</b></td>
+					<tr class="locations">
+						<td rowspan="2"><b>Locations:</b></td>
 						<td>North of the river</td>
 						<td><input type="checkbox" name="north" checked="checked" onClick="Change()" /></td>
 					</tr>
-					<tr class="location">
+					<tr class="locations">
 						<td>South of the river</td>
 						<td><input type="checkbox" name="south" checked="checked" onClick="Change()" /></td>
 					</tr>

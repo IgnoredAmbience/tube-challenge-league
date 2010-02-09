@@ -109,7 +109,12 @@ body
 	font-weight: bold;
 }
 
-.location
+.extensions
+{
+	background-color: #ffeeee;
+}
+
+.locations
 {
 	background-color: #eeeeff;
 }
