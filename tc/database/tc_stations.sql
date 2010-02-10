@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2009 at 04:53 PM
+-- Generation Time: Feb 10, 2010 at 02:33 PM
 -- Server version: 5.1.30
 -- PHP Version: 5.2.8
 
@@ -27,7 +27,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE IF NOT EXISTS `tc_stations` (
   `tc_station_id` smallint(3) NOT NULL AUTO_INCREMENT,
-  `tc_station_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `tc_station_name` varchar(27) COLLATE utf8_unicode_ci NOT NULL,
   `tc_station_zone` char(3) COLLATE utf8_unicode_ci NOT NULL,
   `is_lu_yn` char(1) COLLATE utf8_unicode_ci NOT NULL,
   `is_nr_yn` char(1) COLLATE utf8_unicode_ci NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `tc_stations` (
   `is_tl_yn` char(1) COLLATE utf8_unicode_ci NOT NULL,
   `location_ns` char(1) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`tc_station_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=621 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=625 ;
 
 --
 -- Dumping data for table `tc_stations`
@@ -96,7 +96,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (51, 'Bexley', '6', 'N', 'Y', 'N', 'N', 'N', 'S'),
 (52, 'Bexleyheath', '5', 'N', 'Y', 'N', 'N', 'N', 'S'),
 (53, 'Bickley', '5', 'N', 'Y', 'N', 'N', 'N', 'S'),
-(54, 'Birkbeck', 'T', 'N', 'Y', 'N', 'N', 'Y', 'S'),
+(54, 'Birkbeck', '4', 'N', 'Y', 'N', 'N', 'Y', 'S'),
 (55, 'Blackfriars', '1', 'Y', 'Y', 'N', 'N', 'N', 'N'),
 (56, 'Blackheath', '3', 'N', 'Y', 'N', 'N', 'N', 'S'),
 (57, 'Blackhorse Lane', 'T', 'N', 'N', 'N', 'N', 'Y', 'S'),
@@ -278,7 +278,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (233, 'Hackney Wick', '2', 'N', 'N', 'N', 'Y', 'N', 'N'),
 (234, 'Hadley Wood', '6', 'N', 'Y', 'N', 'N', 'N', 'N'),
 (235, 'Hainault', '4', 'Y', 'N', 'N', 'N', 'N', 'N'),
-(236, 'Hammersmith [H&C]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
+(236, 'Hammersmith [Cir/H&C]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (237, 'Hammersmith [Dis/Pic]', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (238, 'Hampstead', '2.5', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (239, 'Hampstead Heath', '2.5', 'N', 'N', 'N', 'Y', 'N', 'N'),
@@ -443,7 +443,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (398, 'Oval', '2', 'Y', 'N', 'N', 'N', 'N', 'S'),
 (399, 'Oxford Circus', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (400, 'Paddington [Bak/Cir/Dis]', '1', 'Y', 'Y', 'N', 'N', 'N', 'N'),
-(401, 'Paddington [H&C]', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
+(401, 'Paddington [Cir/H&C]', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (402, 'Palmers Green', '4', 'N', 'Y', 'N', 'N', 'N', 'N'),
 (403, 'Park Royal', '3', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (404, 'Parsons Green', '2', 'Y', 'N', 'N', 'N', 'N', 'N'),
@@ -662,4 +662,8 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (617, 'Woodside Park', '4', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (618, 'Woolwich Arsenal', '4', 'N', 'Y', 'Y', 'N', 'N', 'S'),
 (619, 'Woolwich Dockyard', '3', 'N', 'Y', 'N', 'N', 'N', 'S'),
-(620, 'Worcester Park', '4', 'N', 'Y', 'N', 'N', 'N', 'S');
+(620, 'Worcester Park', '4', 'N', 'Y', 'N', 'N', 'N', 'S'),
+(621, 'Chafford Hundred', 'C', 'N', 'Y', 'N', 'N', 'N', 'N'),
+(622, 'Grays', 'C', 'N', 'Y', 'N', 'N', 'N', 'N'),
+(623, 'Ockendon', 'C', 'N', 'Y', 'N', 'N', 'N', 'N'),
+(624, 'Purfleet', 'C', 'N', 'Y', 'N', 'N', 'N', 'N');
