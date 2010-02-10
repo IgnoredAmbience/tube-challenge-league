@@ -8,7 +8,7 @@
 	$page_title = "Random Stations Generator";
 	$directory_depth = 1;
 	$type = "main";
-	$script = "r15generator\switcher.js";
+	$script = "r15generator/logic.js";
 	display_header($page_title, $directory_depth, $script);
 	display_menu($directory_depth);
 	display_submenu($type, $directory_depth);
@@ -19,53 +19,53 @@
 	if(!($no && $min && $max))
 	{
 ?>
-			<p>Welcome to the Tube Challenge League Tables - Random Station Generator. This was designed with <a href="/random15/league/">Random 15</a> challenges in mind, but is configurable in many weird and wonderful ways. Anyone for a Random 40 across all 9 zones? Go for it...</p>
+			<p>Welcome to the Tube Challenge League Tables - Random Stations Generator. This was designed with <a href="/random15/league/">Random 15</a> challenges in mind, but is configurable in many weird and wonderful ways. Anyone for a Random 40 across all 9 zones? Go for it...</p>
 			<p><b>It has now been updated to include all stations in the newly-revised Travelcard Area (Zones 1-9, Watford Junction, <abbr title="Chafford Hundred, Grays, Ockendon, Purfleet">Essex Group</abbr>).</b></p>
-			<h4>Step 1 of 4</h4>
+			<h4>Step 1 of 4 - Main selection</h4>
 			<form method="post" action="index.php" name="picker">
 				<p>
 					Number of stations required: <input type="text" name="no" size="3" maxlength="3" value="15" /><br />
-					And the zones these stations should span? <input type="text" name="min" size="3" maxlength="1" value="1" onBlur="Change()" />-<input type="text" name="max" size="3" maxlength="1" value="2" onBlur="Change()" />
+					And the zones these stations should span? <input type="text" name="min" size="3" maxlength="1" value="1" onBlur="change()" />-<input type="text" name="max" size="3" maxlength="1" value="2" onBlur="change()" />
 				</p>
 				<table>
 					<tr>
 						<td rowspan="5"><b>Networks:</b></td>
 						<td>London Underground</td>
-						<td><input type="checkbox" name="lu" checked="checked" onClick="Change()" /></td>
+						<td><input type="checkbox" name="lu" checked="checked" /></td>
 					</tr>
 					<tr>
 						<td>London Overground</td>
-						<td><input type="checkbox" name="lo" onClick="Change()" /></td>
+						<td><input type="checkbox" name="lo" /></td>
 					</tr>
 					<tr>
 						<td>Docklands Light Railway</td>
-						<td><input type="checkbox" name="dlr" onClick="Change()" /></td>
+						<td><input type="checkbox" name="dlr" /></td>
 					</tr>
 					<tr>
 						<td>Tramlink</td>
-						<td><input type="checkbox" name="tl" onClick="Change()" /></td>
+						<td><input type="checkbox" name="tl" /></td>
 					</tr>
 					<tr>
 						<td>National Rail</td>
-						<td><input type="checkbox" name="nr" onClick="Change()" /></td>
+						<td><input type="checkbox" name="nr" onClick="change()" /></td>
 					</tr>
 					<tr class="extensions">
 						<td rowspan="2"><b>Extensions:</b></td>
 						<td>Watford Junction</td>
-						<td><input type="checkbox" name="wj" onClick="Change()" /></td>
+						<td><input type="checkbox" name="wj" /></td>
 					</tr>
 					<tr class="extensions">
 						<td><abbr title="Chafford Hundred, Grays, Ockendon, Purfleet">Essex Group</abbr></td>
-						<td><input type="checkbox" name="eg" onClick="Change()" /></td>
+						<td><input type="checkbox" name="eg" /></td>
 					</tr>
 					<tr class="locations">
 						<td rowspan="2"><b>Locations:</b></td>
 						<td>North of the river</td>
-						<td><input type="checkbox" name="north" checked="checked" onClick="Change()" /></td>
+						<td><input type="checkbox" name="nth" checked="checked" /></td>
 					</tr>
 					<tr class="locations">
 						<td>South of the river</td>
-						<td><input type="checkbox" name="south" checked="checked" onClick="Change()" /></td>
+						<td><input type="checkbox" name="sth" checked="checked" onClick="change()" /></td>
 					</tr>
 				</table>
 				<p>
@@ -84,8 +84,8 @@
 	
 	if($no && $min && $max && !$start)
 	{
-?>
-			<h4>Step 2 of 4</h4>
+?>	
+			<h4>Step 2 of 4 - Pick starting station</h4>
 			<form method="post" action="index.php">
 				<input type="hidden" name="no" value="<?php echo $no; ?>" />
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
@@ -97,8 +97,8 @@
 				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
 				<input type="hidden" name="wj" value="<?php echo $wj; ?>" />
 				<input type="hidden" name="eg" value="<?php echo $eg; ?>" />
-				<input type="hidden" name="nth" value="<?php echo $north; ?>" />
-				<input type="hidden" name="sth" value="<?php echo $south; ?>" />
+				<input type="hidden" name="nth" value="<?php echo $nth; ?>" />
+				<input type="hidden" name="sth" value="<?php echo $sth; ?>" />
 				<p>Fix my starting station at:
 					<select name="start">
 						<option value="-1">(none)</option>
@@ -124,11 +124,10 @@
 		if($nr) {$query .= "is_nr_yn = 'Y'";}
 		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // cut back trailing "OR" if present at end of this part of query
 		$query .= ") AND (";
-		if($north) {$query .= "location_ns = 'N' OR ";}
-		if($south) {$query .= "location_ns = 'S'";}
+		if($nth) {$query .= "location_ns = 'N' OR ";}
+		if($sth) {$query .= "location_ns = 'S'";}
 		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // and again
 		$query .= ") ORDER BY tc_station_name";
-		echo $query;
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
 
 		while ($fncdata = mysql_fetch_array($fnc))
@@ -157,7 +156,7 @@
 	if($no && $min && $max && $start && !$exclude && !$exlist)
 	{
 ?>
-			<h4>Step 3 of 4</h4>
+			<h4>Step 3 of 4 - Pick stations to exclude</h4>
 			<form method="post" action="index.php">
 				<input type="hidden" name="no" value="<?php echo $no; ?>" />
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
@@ -167,6 +166,11 @@
 				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
 				<input type="hidden" name="tl" value="<?php echo $tl; ?>" />
 				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
+				<input type="hidden" name="wj" value="<?php echo $wj; ?>" />
+				<input type="hidden" name="eg" value="<?php echo $eg; ?>" />
+				<input type="hidden" name="nth" value="<?php echo $nth; ?>" />
+				<input type="hidden" name="sth" value="<?php echo $sth; ?>" />
+				<input type="hidden" name="start" value="<?php echo $start; ?>" />
 				<p>
 					<input type="submit" name="next" value="Next Step" />
 					<input type="submit" name="cancel" value="Start Over" />
@@ -178,11 +182,22 @@
 		$smax = $max + 0.5;
 		$smin = $min - 0.5;
 
-		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND tc_station_id != $start AND (";
-		if($lu == "on") {$query .= " is_lu_yn = 'Y'";}
-		if($lu == "on" && $dlr == "on") {$query .= " OR";}
-		if($dlr == "on") {$query .= " is_dlr_yn = 'Y'";}
-		$query .= ") ORDER BY tc_station_name";
+		$query = "SELECT * FROM tc_stations WHERE ";
+		if($tl) {$query .= "tc_station_zone = 'T' OR ";}
+		if($wj) {$query .= "tc_station_zone = 'W' OR ";}
+		if($eg) {$query .= "tc_station_zone = 'C' OR ";}
+		$query .= "tc_station_zone <= $smax AND tc_station_zone >= $smin AND (";
+		if($lu) {$query .= "is_lu_yn = 'Y' OR ";}
+		if($lo) {$query .= "is_lo_yn = 'Y' OR ";}
+		if($dlr) {$query .= "is_dlr_yn = 'Y' OR ";}
+		if($tl) {$query .= "is_tl_yn = 'Y' OR ";}
+		if($nr) {$query .= "is_nr_yn = 'Y'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // cut back trailing "OR" if present at end of this part of query
+		$query .= ") AND (";
+		if($nth) {$query .= "location_ns = 'N' OR ";}
+		if($sth) {$query .= "location_ns = 'S'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // and again
+		$query .= ") AND tc_station_id != $start ORDER BY tc_station_name";
 		$fnc = mysql_query($query) or die("Select Failed! [000]");
 
 		while ($fncdata = mysql_fetch_array($fnc))
@@ -196,7 +211,8 @@
 			$fncpos++;
 		}
 ?>
-				</table><br />
+				</table>
+				<br />
 				<input type="hidden" name="exclude[]" value="-1" />
 				<p>
 					<input type="submit" name="next" value="Next Step" />
@@ -215,14 +231,21 @@
 	if($no && $min && $max && $start && $exclude)
 	{
 ?>
-			<h4>Step 4 of 4</h4>
+			<h4>Step 4 of 4 - Confirm settings</h4>
 			<form method="post" action="index.php">
 				<input type="hidden" name="no" value="<?php echo $no; ?>" />
 				<input type="hidden" name="min" value="<?php echo $min; ?>" />
 				<input type="hidden" name="max" value="<?php echo $max; ?>" />
-				<input type="hidden" name="start" value="<?php echo $start; ?>" />
 				<input type="hidden" name="lu" value="<?php echo $lu; ?>" />
+				<input type="hidden" name="lo" value="<?php echo $lo; ?>" />
 				<input type="hidden" name="dlr" value="<?php echo $dlr; ?>" />
+				<input type="hidden" name="tl" value="<?php echo $tl; ?>" />
+				<input type="hidden" name="nr" value="<?php echo $nr; ?>" />
+				<input type="hidden" name="wj" value="<?php echo $wj; ?>" />
+				<input type="hidden" name="eg" value="<?php echo $eg; ?>" />
+				<input type="hidden" name="nth" value="<?php echo $nth; ?>" />
+				<input type="hidden" name="sth" value="<?php echo $sth; ?>" />
+				<input type="hidden" name="start" value="<?php echo $start; ?>" />
 <?php
 		$query = "SELECT * FROM tc_stations WHERE tc_station_id = $start";
 		$fnc = mysql_query($query) or die("Select Failed! [000]");
@@ -307,11 +330,22 @@
 <?php
 		}
 									
-		$query = "SELECT * FROM tc_stations WHERE tc_station_zone <= $smax AND tc_station_zone >= $smin AND tc_station_id NOT IN ($exlist) AND (";
-		if($lu == "on") {$query .= " is_lu_yn = 'Y'";}
-		if($lu == "on" && $dlr == "on") {$query .= " OR";}
-		if($dlr == "on") {$query .= " is_dlr_yn = 'Y'";}
-		$query .= ") ORDER BY RAND() LIMIT $no";
+		$query = "SELECT * FROM tc_stations WHERE ";
+		if($tl) {$query .= "tc_station_zone = 'T' OR ";}
+		if($wj) {$query .= "tc_station_zone = 'W' OR ";}
+		if($eg) {$query .= "tc_station_zone = 'C' OR ";}
+		$query .= "tc_station_zone <= $smax AND tc_station_zone >= $smin AND (";
+		if($lu) {$query .= "is_lu_yn = 'Y' OR ";}
+		if($lo) {$query .= "is_lo_yn = 'Y' OR ";}
+		if($dlr) {$query .= "is_dlr_yn = 'Y' OR ";}
+		if($tl) {$query .= "is_tl_yn = 'Y' OR ";}
+		if($nr) {$query .= "is_nr_yn = 'Y'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // cut back trailing "OR" if present at end of this part of query
+		$query .= ") AND (";
+		if($nth) {$query .= "location_ns = 'N' OR ";}
+		if($sth) {$query .= "location_ns = 'S'";}
+		if(strpos($query, " OR ", strlen($query) - 5)) {$query = substr($query, 0, strlen($query) - 4);} // and again
+		$query .= ") AND tc_station_id NOT IN ($exlist) ORDER BY RAND() LIMIT $no";
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
 		$fncpos = 0;
 					
