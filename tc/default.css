@@ -129,6 +129,12 @@ body
 	background-color: #f4f4f4;
 }
 
+abbr, acronym
+{
+  cursor: help;
+  border-bottom: 1px dotted #777777;
+}
+
 i
 {
 	font-size: 8pt;

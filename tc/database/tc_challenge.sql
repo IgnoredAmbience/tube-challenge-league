@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 13, 2009 at 01:48 PM
+-- Generation Time: Mar 24, 2010 at 12:37 PM
 -- Server version: 5.1.30
 -- PHP Version: 5.2.8
 
@@ -59,7 +59,7 @@ INSERT INTO `tc_challenge` (`tc_challenge`, `tc_short_name`, `tc_challenge_name`
 ('268', 'Full Network', 'The Full Network Challenge', 268, 'Visit every station on the London Underground as quickly as possible', 'Between December 2007 and March 2008 there existed a short-lived configuration of 268 stations, as the system was inbetween the closure of the East London Line, and the opening of the new Heathrow Terminal 5 branch of the Piccadilly Line.', 'December 2007-March 2008', 3, 'fullnetwork'),
 ('Z1C', 'Zone 1', 'Zone 1 Challenge', 64, 'Visit every station in Travelcard Zone 1 as quickly as possible, including both Edgware Roads and both Paddingtons.', '', 'Present', NULL, 'zone1'),
 ('D3E', 'DLR', 'Docklands Light Railway Challenge', 38, 'Visit every station on the DLR by DLR train as quickly as possible', 'In June 2008 Tower Gateway closed, bringing about the second temporary configuration, until the re-opening of Tower Gateway and the opening of Woolwich Arsenal.', 'June 2008-March 2009', 2, 'dlr'),
-('R15', 'Random 15', 'Random 15', 15, 'Visit a selection of 15 random station within Zones 1 and 2, knowing only the first station in advance.', 'A strange one to have on the site, as of course the time varies with stations drawn - but this also applies to some extent to other challenges with respect to starting station. It''s good to have a central location to store the times in any case. This site now has its very own <a href="r15generator/"><b>Random Stations Generator</b></a> which can be used to generate a set of stations for a R15 challenge...', 'Present', NULL, 'random15'),
+('R15', 'Random 15', 'Random 15', 15, 'Visit a selection of 15 random station within Zones 1 and 2, knowing only the first station in advance.', 'A strange one to have on the site, as of course the time varies with stations drawn - but this also applies to some extent to other challenges with respect to starting station. It''s good to have a central location to store the times in any case. This site now has its very own <a href="r15generator/"><b>Random Stations Generator</b></a> which can be used to generate a set of stations for an R15 challenge...', 'Present', NULL, 'random15'),
 ('PRK', 'Xmas Park', 'The Christmas Park Challenge', 24, 'Visit, and photograph the exterior of,  every London Underground station with the word "Park" in the name as quickly as possible', '', 'Present', NULL, 'xmaspark'),
 ('129', 'Snake', '129 Snake Challenge', 129, 'The 129 snake represents the maximum number of stations that can be visited without leaving the network whilst visiting any station no more than once.', 'The previous configuration was 129 stations, and existed prior to the closure of the East London Line.', 'Until December 2007', 2, 'snake'),
 ('POC', 'Pts/Compass', 'Points of the Compass', 32, 'Visit every station prefixed or suffixed with a point of the compass as quickly as possible', '', 'Present', NULL, 'pointsofcompass'),
