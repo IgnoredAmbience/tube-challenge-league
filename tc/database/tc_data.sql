@@ -1,44 +1,54 @@
 -- phpMyAdmin SQL Dump
--- version 2.8.2
+-- version 3.1.1
 -- http://www.phpmyadmin.net
--- 
+--
 -- Host: localhost
--- Generation Time: Feb 03, 2010 at 07:45 PM
--- Server version: 4.1.20
+-- Generation Time: Mar 24, 2010 at 12:38 PM
+-- Server version: 5.1.30
 -- PHP Version: 5.2.8
--- 
--- Database: `Mcrivpro`
--- 
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `dbtubechallengeleague`
+--
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `tc_data`
--- 
+--
 
-CREATE TABLE `tc_data` (
-  `tc_challenge` varchar(3) collate utf8_unicode_ci NOT NULL default '',
-  `tc_name` varchar(255) collate utf8_unicode_ci NOT NULL default '',
-  `tc_hours` tinyint(2) NOT NULL default '0',
-  `tc_mins` tinyint(2) NOT NULL default '0',
-  `tc_sec` tinyint(2) NOT NULL default '0',
-  `tc_event` varchar(255) collate utf8_unicode_ci default NULL,
-  `tc_date` date default NULL,
-  `tc_fn_station_count` smallint(4) default NULL,
-  `tc_fn274_excluded_station` varchar(3) collate utf8_unicode_ci default NULL,
-  `tc_fn_gwr` char(1) collate utf8_unicode_ci default NULL,
-  `tc_uid` int(4) NOT NULL auto_increment,
-  `tc_pending_yn` char(1) collate utf8_unicode_ci NOT NULL default 'N',
-  `tc_upd_id` varchar(3) collate utf8_unicode_ci NOT NULL default '',
-  `tc_upd_date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  PRIMARY KEY  (`tc_uid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=510 ;
+CREATE TABLE IF NOT EXISTS `tc_data` (
+  `tc_challenge` char(3) COLLATE utf8_unicode_ci NOT NULL,
+  `tc_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tc_hours` tinyint(2) NOT NULL DEFAULT '0',
+  `tc_mins` tinyint(2) NOT NULL DEFAULT '0',
+  `tc_sec` tinyint(2) NOT NULL DEFAULT '0',
+  `tc_event` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tc_date` date DEFAULT NULL,
+  `tc_fn_station_count` smallint(4) DEFAULT NULL,
+  `tc_fn274_excluded_station` char(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tc_fn_gwr` char(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tc_uid` int(4) NOT NULL AUTO_INCREMENT,
+  `tc_pending_yn` char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'N',
+  `tc_upd_id` char(3) COLLATE utf8_unicode_ci NOT NULL,
+  `tc_upd_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`tc_uid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=534 ;
 
--- 
+--
 -- Dumping data for table `tc_data`
--- 
+--
 
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
+('A11', 'Matthew Scrivin &amp; Steven Karahan', 0, 33, 37, NULL, '2008-05-08', NULL, NULL, NULL, 7, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Matt Nunn', 0, 39, 46, NULL, '2008-02-07', NULL, NULL, NULL, 8, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Kevin &amp; Ryan Brown, Ann Howell &amp; John Stark', 0, 42, 4, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 9, 'N', 'Mig', '0000-00-00 00:00:00'),
 ('A11', 'Antony &amp; Phil Brown', 0, 46, 11, 'Tube Olympics 2008', '2008-07-11', NULL, NULL, NULL, 10, 'N', 'Mig', '0000-00-00 00:00:00'),
@@ -418,7 +428,8 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('Z12', 'Peter Smyth', 6, 51, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 379, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Matthew Scrivin &amp; Steven Karahan', 7, 18, 53, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 380, 'N', 'mjs', '2008-11-09 11:08:50'),
 ('Z12', 'Kevin Brown', 7, 56, 29, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 381, 'N', 'MJS', '2008-11-09 11:08:50');
-INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES ('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
+INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec`, `tc_event`, `tc_date`, `tc_fn_station_count`, `tc_fn274_excluded_station`, `tc_fn_gwr`, `tc_uid`, `tc_pending_yn`, `tc_upd_id`, `tc_upd_date`) VALUES
+('Z12', 'Antony Brown', 8, 6, 45, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 382, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Alistair Brown', 8, 9, 40, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 383, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('Z12', 'Martin Hazel', 8, 35, 15, 'Inaugural Zones 1 and 2', '2008-11-08', NULL, NULL, NULL, 384, 'N', 'MJS', '2008-11-09 11:08:50'),
 ('270', 'Antony, Kevin, Phil &amp; Jamie Brown, Matthew Scrivin &amp; Pudsey', 17, 41, 43, 'Children in Need 2008', '2008-11-14', NULL, NULL, NULL, 385, 'N', 'MJS', '2008-11-16 13:46:39'),
@@ -520,26 +531,27 @@ INSERT INTO `tc_data` (`tc_challenge`, `tc_name`, `tc_hours`, `tc_mins`, `tc_sec
 ('R15', 'Thomas Wood &amp; Hajime Urata', 2, 30, 34, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 483, 'N', 'MJS', '2009-10-18 12:45:02'),
 ('R15', 'Al Brown &amp; Steven Karahan', 2, 32, 55, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 484, 'N', 'MJS', '2009-10-18 12:46:13'),
 ('R15', 'Adam &amp; Ian Jones', 4, 27, 0, 'R15 Championship 2009-10 R2', '2009-10-17', NULL, NULL, NULL, 485, 'N', 'MJS', '2009-10-18 12:46:13'),
-('270', 'Kevin &amp; Al Brown, Peter Smyth, Andi James &amp; Damian Cook', 16, 23, 32, NULL, '2009-10-28', 240, NULL, 'N', 486, 'N', 'MJS', '2009-11-04 17:03:40'),
-('270', 'Sam Cawley &amp; Matthew Scrivin', 18, 1, 18, NULL, '2009-10-30', 254, NULL, 'N', 487, 'N', 'MJS', '2009-11-04 17:03:40'),
-('270', 'Andi James', 17, 44, 39, NULL, '2009-11-13', NULL, NULL, 'N', 488, 'N', 'MJS', '2009-11-23 12:28:52'),
-('270', 'Antony, Kevin &amp; Jamie Brown, &amp; Pudsey', 17, 18, 55, 'Children in Need 2009', '2009-11-20', NULL, NULL, 'N', 489, 'N', 'MJS', '2009-11-23 12:28:52'),
-('270', 'Sam Cawley &amp; Matthew Scrivin', 16, 41, 16, 'Children in Need 2009', '2009-11-20', 254, NULL, 'N', 490, 'N', 'MJS', '2009-11-23 12:35:02'),
-('270', 'Sam Cawley &amp; Matthew Scrivin', 0, 6, 46, 'Children in Need 2009', '2009-11-20', 2, NULL, 'N', 491, 'N', 'MJS', '2009-11-23 12:35:02'),
-('270', 'Andi James, Steve Wilson &amp; James &#8220;mullardo&#8221;', 0, 6, 46, 'Children in Need 2009', '2009-11-20', 2, NULL, 'N', 492, 'N', 'MJS', '2009-11-23 12:35:51'),
-('270', 'Andi James, Steve Wilson &amp; James &#8220;mullardo&#8221;', 13, 36, 18, 'Children in Need 2009', '2009-11-20', 215, NULL, 'N', 493, 'N', 'MJS', '2009-11-25 09:52:56'),
-('270', 'Sam Cawley', 17, 2, 23, NULL, '2009-12-04', NULL, NULL, NULL, 494, 'N', 'MJS', '2009-12-06 15:21:19'),
-('R15', 'Steven Karahan &amp; Thomas Wood', 2, 56, 9, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 495, 'N', 'MJS', '2009-12-06 15:24:16'),
-('R15', 'Peter Smyth', 3, 6, 57, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 496, 'N', 'MJS', '2009-12-06 15:24:16'),
-('R15', 'John Stark, Antony &amp; Kevin Brown', 3, 10, 46, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 497, 'N', 'MJS', '2009-12-06 15:28:08'),
-('R15', 'Martin Hazel', 3, 16, 6, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 499, 'N', 'MJS', '2009-12-06 15:28:08'),
-('R15', 'Andi James &amp; Sara Wearn', 3, 22, 52, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 500, 'N', 'MJS', '2009-12-06 15:26:46'),
-('R15', 'Richie Graham', 4, 4, 51, 'R15 Championship 2009-10 R3', '2009-11-28', NULL, NULL, NULL, 501, 'N', 'MJS', '2009-12-06 15:27:17'),
-('270', 'Andi James, Martin Hazel &amp; Steve Wilson', 16, 44, 16, NULL, '2009-12-14', NULL, NULL, NULL, 502, 'N', 'MJS', '2009-12-16 14:28:09'),
-('PRK', 'Peter Smyth', 7, 46, 54, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 503, 'N', 'MJS', '2010-01-18 14:45:47'),
-('PRK', 'Kevin Brown, Steven Karahan &amp; Matt Nunn', 7, 48, 35, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 504, 'N', 'MJS', '2010-01-18 14:49:40'),
-('PRK', 'Martin Hazel', 8, 14, 0, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 505, 'N', 'MJS', '2010-01-18 14:48:15'),
-('PRK', 'Thomas Wood (&amp; Philip Brown)', 8, 39, 31, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 506, 'N', 'MJS', '2010-01-18 14:48:15'),
-('PRK', 'Oliver &amp; Mark Lewisohn', 8, 47, 19, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 507, 'N', 'MJS', '2010-01-18 14:49:09'),
-('PRK', 'Hassan Chagani', 8, 51, 33, 'Xmas Park Challenge 2009', '2009-12-30', NULL, NULL, NULL, 508, 'N', 'MJS', '2010-01-18 14:49:40'),
-('BOT', '&#8220;timwakeling&#8221;', 2, 10, 40, NULL, '2009-12-11', NULL, NULL, NULL, 509, 'N', 'MJS', '2010-01-18 14:53:03');
+('MOU', 'Alistair Brown', 1, 34, 20, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 510, 'N', 'MJS', '2010-03-18 14:21:16'),
+('MOU', 'Samantha Cawley &amp; Matthew Scrivin', 1, 37, 25, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 511, 'N', 'MJS', '2010-03-18 14:01:03'),
+('MOU', 'Martin Hazel', 1, 37, 25, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 512, 'N', 'MJS', '2010-03-18 14:01:55'),
+('MOU', 'Peter Smyth', 1, 37, 25, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 513, 'N', 'MJS', '2010-03-18 14:01:55'),
+('MOU', 'Kevin &amp; Antony Brown', 1, 40, 5, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 514, 'N', 'MJS', '2010-03-18 14:02:48'),
+('MOU', 'Andi James &amp; Sara Wearn', 1, 47, 40, 'Tube Olympics 2010', '2010-02-16', NULL, NULL, NULL, 515, 'N', 'MJS', '2010-03-18 14:02:48'),
+('D40', 'Alistair Brown', 2, 0, 40, NULL, '2010-02-16', NULL, NULL, NULL, 516, 'N', 'MJS', '2010-03-18 14:21:16'),
+('TRM', 'Jonny Lyon', 1, 48, 25, 'Tube Olympics 2010', '2010-02-23', NULL, NULL, NULL, 517, 'N', 'MJS', '2010-03-18 14:07:58'),
+('R15', 'Joe Grocott-James', 2, 46, 31, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 518, 'N', 'MJS', '2010-03-18 14:11:59'),
+('R15', 'Jonny Lyon &amp; Becky Hemsley', 2, 44, 48, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 519, 'N', 'MJS', '2010-03-18 14:11:59'),
+('R15', 'Peter Smyth', 2, 23, 17, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 520, 'N', 'MJS', '2010-03-18 14:12:45'),
+('R15', 'Martin Hazel', 2, 23, 17, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 521, 'N', 'MJS', '2010-03-18 14:12:45'),
+('R15', 'Antony Brown &amp; John Stark', 2, 23, 17, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 522, 'N', 'MJS', '2010-03-18 14:13:35'),
+('R15', 'Andi James &amp; Sara Wearn', 2, 23, 17, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 523, 'N', 'MJS', '2010-03-18 14:13:35'),
+('R15', 'Philip Brown, Hassan Chagani &amp; Max Laverack', 2, 23, 17, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 524, 'N', 'MJS', '2010-03-18 14:16:16'),
+('R15', 'Jamie &amp; Ryan Brown', 2, 15, 40, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 525, 'N', 'MJS', '2010-03-18 14:16:16'),
+('R15', 'Thomas Wood', 2, 15, 2, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 526, 'N', 'MJS', '2010-03-18 14:17:06'),
+('R15', 'Kevin Brown &amp; Steve Wilson', 2, 1, 13, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 527, 'N', 'MJS', '2010-03-18 14:17:06'),
+('R15', 'Alistair Brown', 1, 57, 53, 'Tube Olympics 2010', '2010-02-27', NULL, NULL, NULL, 528, 'N', 'MJS', '2010-03-18 14:21:16'),
+('A11', 'Jonny Lyon', 0, 47, 59, NULL, '2010-03-03', NULL, NULL, NULL, 529, 'N', 'MJS', '2010-03-18 14:19:23'),
+('270', 'Justin Irwin, Richard Donaldson &amp; &#8220;Stephanie Green&#8221;', 17, 7, 6, 'Tube Olympics 2010', '2010-02-19', NULL, NULL, 'N', 530, 'N', 'MJS', '2010-03-18 14:41:46'),
+('270', 'Alistair Brown, Sam Cawley &amp; Matthew Scrivin', 17, 28, 19, 'Tube Olympics 2010', '2010-02-19', NULL, NULL, 'N', 531, 'N', 'MJS', '2010-03-18 14:42:26'),
+('270', 'Kevin Brown &amp; Sara Wearn', 17, 49, 51, 'Tube Olympics 2010', '2010-02-19', 267, NULL, 'N', 532, 'N', 'MJS', '2010-03-18 14:40:46'),
+('270', 'Richie Graham &amp; Andi James', 17, 38, 0, 'Tube Olympics 2010', '2010-02-19', 238, NULL, 'N', 533, 'N', 'MJS', '2010-03-18 14:40:46');
