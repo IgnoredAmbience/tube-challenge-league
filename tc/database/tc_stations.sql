@@ -396,7 +396,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (351, 'Mitcham Eastfields', '3', 'N', 'Y', 'N', 'N', 'N', 'S'),
 (352, 'Mitcham Junction', '4', 'N', 'Y', 'N', 'N', 'Y', 'S'),
 (353, 'Monument', '1', 'Y', 'N', 'N', 'N', 'N', 'N'),
-(354, 'Moor Park', '6/', 'Y', 'N', 'N', 'N', 'N', 'N'),
+(354, 'Moor Park', '6.5', 'Y', 'N', 'N', 'N', 'N', 'N'),
 (355, 'Moorgate', '1', 'Y', 'Y', 'N', 'N', 'N', 'N'),
 (356, 'Morden', '4', 'Y', 'N', 'N', 'N', 'N', 'S'),
 (357, 'Morden Road', 'T', 'N', 'N', 'N', 'N', 'Y', 'S'),
