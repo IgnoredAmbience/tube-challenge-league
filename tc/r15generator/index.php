@@ -6,7 +6,28 @@
 	$directory_depth = 1;
 	$type = "main";
 	$script = "r15generator/logic.js";
-	display_header($page_title, $directory_depth, $script);
+
+	$css = <<<EOF
+<style type="text/css">
+	@media screen {
+		.norowhide {
+			display: block !important;
+		}
+		table.hiderows tr {
+			display: none;
+		}
+	}
+ 
+	@media print {
+		#header3, #header4, .hideprint {
+			display: none;
+		}
+	}
+</style>
+EOF;
+
+
+	display_header($page_title, $directory_depth, $script, $css);
 	display_menu($directory_depth);
 	display_submenu($type, $directory_depth);
 
@@ -175,6 +196,7 @@ EOF;
 ?>
 				<p>You are about to generate <b><?php echo $no; ?></b> random stations with the following criteria:</p>
 <?php echo option_summary(validate_exlist($_POST['exclude'])); ?>
+				<p><input type="checkbox" name="hide_results" /> Hide generated stations?</p>
 				<p>
 					<input type="submit" name="next" value="Generate!" />
 					<input type="submit" name="cancel" value="Start Over" />
@@ -190,9 +212,6 @@ EOF;
 	 ******/
 	
 	else {
-?>
-			<form method="post" action="index.php">
-<?php
 		$start = (int) $_POST['start'];
 		$no = (int) $_POST['no'];
 		$exlist = validate_exlist($_POST['exlist']);
@@ -202,13 +221,14 @@ EOF;
 				<p>Here are your <b><?php echo $no; ?></b> random stations, drawn using the following criteria:</p>
 <?php echo option_summary($exlist, $start_sta); ?>
 
-				<table border="0" cellpadding="1" cellspacing="0">
+<table border="0" cellpadding="1" cellspacing="0"<?php if(isset($_POST['hide_results'])) echo ' class="hiderows"'; ?>>
 <?php	
 		if($start > -1) {
 			$exlist .= ",".$start;
 			$no--;
+			$fncpos++;
 ?>
-					<tr class="row<?php if($fncpos%2) {echo "1";} else {echo "2";} ?>">
+					<tr class="row1 norowhide">
 						<td><?php echo $start_sta; ?></td>
 					</tr>
 <?php
@@ -217,13 +237,18 @@ EOF;
 		$where = where_condition($start, $exlist);
 		$query = "SELECT * FROM tc_stations WHERE $where ORDER BY RAND() LIMIT $no";
 		$fnc = mysql_query($query) or die("Select Failed! [999]");
-		$fncpos = 0;
 					
-		while ($fncdata = mysql_fetch_array($fnc))
-		{
+		while ($fncdata = mysql_fetch_array($fnc)) {
+			if($fncpos == 1 && isset($_POST['hide_results'])) {
+?>
+					<tr class="row2 norowhide hideprint">
+						<td><i>(remaining stations hidden from screen, visible when printed)</i></td>
+					</tr>
+<?php
+			}
 			$fncpos++;
 ?>
-					<tr class="row<?php if($fncpos%2 != 0) {echo "1";} else {echo "2";} ?>">
+					<tr class="row<?php echo $fncpos%2 ? "1" : "2"; if(!$fncpos) echo " norowhide"; ?>">
 						<td><?php echo $fncdata['tc_station_name']; ?></td>
 					</tr>
 <?php
