@@ -128,7 +128,7 @@ EOF;
 					<input type="submit" name="cancel" value="Start Over" />
 				</p>
 				<p>We definitely won't be visiting:</p>
-				<input type="hidden" name="exclude[]" value="-1" />
+				<input type="hidden" name="exclude[]" value="" />
 				<table border="0" cellpadding="0" cellspacing="0">
 <?php
 		$fncpos = 0;
