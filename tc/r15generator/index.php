@@ -7,27 +7,7 @@
 	$type = "main";
 	$script = "r15generator/logic.js";
 
-	$css = <<<EOF
-<style type="text/css">
-	@media screen {
-		.norowhide {
-			display: block !important;
-		}
-		table.hiderows tr {
-			display: none;
-		}
-	}
- 
-	@media print {
-		#header3, #header4, .hideprint {
-			display: none;
-		}
-	}
-</style>
-EOF;
-
-
-	display_header($page_title, $directory_depth, $script, $css);
+	display_header($page_title, $directory_depth, $script);
 	display_menu($directory_depth);
 	display_submenu($type, $directory_depth);
 
