@@ -208,7 +208,7 @@ EOF;
 			$no--;
 			$fncpos++;
 ?>
-					<tr class="row1 norowhide">
+					<tr class="row2 norowhide">
 						<td><?php echo $start_sta; ?></td>
 					</tr>
 <?php
@@ -221,17 +221,17 @@ EOF;
 		while ($fncdata = mysql_fetch_array($fnc)) {
 			if($fncpos == 1 && isset($_POST['hide_results'])) {
 ?>
-					<tr class="row2 norowhide hideprint">
+					<tr class="row1 norowhide hideprint">
 						<td><i>(remaining stations hidden from screen, visible when printed)</i></td>
 					</tr>
 <?php
 			}
-			$fncpos++;
 ?>
 					<tr class="row<?php echo $fncpos%2 ? "1" : "2"; if(!$fncpos) echo " norowhide"; ?>">
 						<td><?php echo $fncdata['tc_station_name']; ?></td>
 					</tr>
 <?php
+			$fncpos++;
 		}
 ?>
 				</table>
