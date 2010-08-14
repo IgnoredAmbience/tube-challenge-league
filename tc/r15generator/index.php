@@ -283,7 +283,7 @@ EOF;
 			$fnc = mysql_query($query) or die("Select Failed! [000]");
 			$start_sta = mysql_result($fnc, 0);
 		} elseif($start == -1) {
-			$start_sta = 'random';
+			$start_sta = 'Random';
 		}
 
 		$ex_stas = 'None';
