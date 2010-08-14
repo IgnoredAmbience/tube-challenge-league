@@ -26,23 +26,23 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 CREATE TABLE IF NOT EXISTS `tc_stations` (
-  `tc_station_id` smallint(3) NOT NULL AUTO_INCREMENT,
-  `tc_station_name` varchar(27) COLLATE utf8_unicode_ci NOT NULL,
-  `tc_station_zone` char(3) COLLATE utf8_unicode_ci NOT NULL,
+  `id` smallint(3) NOT NULL AUTO_INCREMENT,
+  `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
+  `zone` char(3) COLLATE utf8_unicode_ci NOT NULL,
   `is_lu` BOOLEAN NOT NULL,
   `is_nr` BOOLEAN NOT NULL,
   `is_dlr` BOOLEAN NOT NULL,
   `is_lo` BOOLEAN NOT NULL,
   `is_tl` BOOLEAN NOT NULL,
   `location_ns` ENUM ('N', 'S')  NOT NULL,
-  PRIMARY KEY (`tc_station_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=625 ;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=637 ;
 
 --
 -- Dumping data for table `tc_stations`
 --
 
-INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`, `is_lu`, `is_nr`, `is_dlr`, `is_lo`, `is_tl`, `location_ns`) VALUES
+INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is_lo`, `is_tl`, `location_ns`) VALUES
 (1, 'Abbey Wood', '4', 0, 1, 0, 0, 0, 'S'),
 (2, 'Acton Central', '3', 0, 0, 0, 1, 0, 'N'),
 (3, 'Acton Main Line', '3', 0, 1, 0, 0, 0, 'N'),
@@ -130,7 +130,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (85, 'Camden Road', '2', 0, 0, 0, 1, 0, 'N'),
 (86, 'Camden Town', '2', 1, 0, 0, 0, 0, 'N'),
 (87, 'Canada Water', '2', 1, 0, 0, 1, 0, 'S'),
-(88, 'Canary Wharf', '2', 1, 0, 1, 0, 0, 'N'),
+(88, 'Canary Wharf (Jubilee)', '2', 1, 0, 0, 0, 0, 'N'),
 (89, 'Canning Town', '3', 1, 0, 1, 0, 0, 'N'),
 (90, 'Cannon Street', '1', 1, 1, 0, 0, 0, 'N'),
 (91, 'Canonbury', '2', 0, 0, 0, 1, 0, 'N'),
@@ -500,8 +500,8 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (455, 'Selhurst', '4', 0, 1, 0, 0, 0, 'S'),
 (456, 'Seven Kings', '4', 0, 1, 0, 0, 0, 'N'),
 (457, 'Seven Sisters', '3', 1, 1, 0, 0, 0, 'N'),
-(458, 'Shadwell', '2', 0, 0, 1, 1, 0, 'N'),
-(459, 'Shepherd''s Bush', '2', 1, 1, 0, 1, 0, 'N'),
+(458, 'Shadwell (DLR)', '2', 0, 0, 1, 0, 0, 'N'),
+(459, 'Shepherd''s Bush (Central)', '2', 1, 0, 0, 0, 0, 'N'),
 (460, 'Shepherd''s Bush Market', '2', 1, 0, 0, 0, 0, 'N'),
 (461, 'Shortlands', '4', 0, 1, 0, 0, 0, 'S'),
 (462, 'Sidcup', '5', 0, 1, 0, 0, 0, 'S'),
@@ -627,7 +627,7 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (582, 'West Ealing', '3', 0, 1, 0, 0, 0, 'N'),
 (583, 'West Finchley', '4', 1, 0, 0, 0, 0, 'N'),
 (584, 'West Ham', '3', 1, 1, 0, 0, 0, 'N'),
-(585, 'West Hampstead', '2', 1, 1, 0, 1, 0, 'N'),
+(585, 'West Hampstead (Jubilee)', '2', 1, 0, 0, 0, 0, 'N'),
 (586, 'West Harrow', '5', 1, 0, 0, 0, 0, 'N'),
 (587, 'West India Quay', '2', 0, 0, 1, 0, 0, 'N'),
 (588, 'West Kensington', '2', 1, 0, 0, 0, 0, 'N'),
@@ -673,5 +673,10 @@ INSERT INTO `tc_stations` (`tc_station_id`, `tc_station_name`, `tc_station_zone`
 (628, 'Shoreditch High Street', '1', 0, 0, 0, 1, 0, 'N'),
 (629, 'Wapping', '2', 0, 0, 0, 1, 0, 'N'),
 (630, 'Rotherhithe', '2', 0, 0, 0, 1, 0, 'S'),
-(631, 'Surrey Quays', '2', 0, 0, 0, 1, 0, 'S');
+(631, 'Surrey Quays', '2', 0, 0, 0, 1, 0, 'S'),
+(632, 'Shepherd''s Bush (Overground)', '2', 0, 1, 0, 1, 0, 'N'),
+(633, 'West Hampstead (Overground)', '2', 0, 0, 0, 1, 0, 'N'),
+(634, 'West Hampstead Thameslink', '2', 0, 0, 0, 1, 0, 'N'),
+(635, 'Shadwell (Overground)', '2', 0, 0, 0, 1, 0, 'N'),
+(636, 'Canary Wharf (DLR)', '2', 0, 0, 1, 0, 0, 'N');
 

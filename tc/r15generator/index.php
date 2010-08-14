@@ -95,12 +95,12 @@
 						<option value="-1">(none)</option>
 <?php
 		$where = where_condition();
-		$query = "SELECT * FROM tc_stations WHERE $where ORDER BY tc_station_name";
+		$query = "SELECT * FROM tc_stations WHERE $where ORDER BY name";
 		$fnc = mysql_query($query) or die("Select Failed! [999]" . mysql_error());
 
 		while ($fncdata = mysql_fetch_array($fnc)) { 
 			echo <<<EOF
-						<option value="${fncdata['tc_station_id']}">${fncdata['tc_station_name']}</option>
+						<option value="${fncdata['id']}">${fncdata['name']}</option>
 EOF;
 		}
 ?>
@@ -135,14 +135,14 @@ EOF;
 		$fncpos = 0;
 
 		$where = where_condition($_POST['start']);
-		$query = "SELECT * FROM tc_stations WHERE $where ORDER BY tc_station_name";
+		$query = "SELECT * FROM tc_stations WHERE $where ORDER BY name";
 		$fnc = mysql_query($query) or die("Select Failed! [000]");
 
 		while ($fncdata = mysql_fetch_array($fnc)) {
 ?>
 					<tr class="row<?php if($fncpos%2 != 0) {echo "1";} else {echo "2";} ?>">
-						<td><?php echo $fncdata['tc_station_name']; ?></td>
-						<td><input type="checkbox" name="exclude[]" value="<?php echo $fncdata['tc_station_id']; ?>" /></td>
+						<td><?php echo $fncdata['name']; ?></td>
+						<td><input type="checkbox" name="exclude[]" value="<?php echo $fncdata['id']; ?>" /></td>
 					</tr>
 <?php
 			$fncpos++;
@@ -228,7 +228,7 @@ EOF;
 			}
 ?>
 					<tr class="row<?php echo $fncpos%2 ? "1" : "2"; if(!$fncpos) echo " norowhide"; ?>">
-						<td><?php echo $fncdata['tc_station_name']; ?></td>
+						<td><?php echo $fncdata['name']; ?></td>
 					</tr>
 <?php
 			$fncpos++;
@@ -279,7 +279,7 @@ EOF;
 		$zones = $max > $min ? "$min-$max" : $min;
 
 		if($start > 0) {
-			$query = "SELECT tc_station_name FROM tc_stations WHERE tc_station_id = $start";
+			$query = "SELECT name FROM tc_stations WHERE id = $start";
 			$fnc = mysql_query($query) or die("Select Failed! [000]");
 			$start_sta = mysql_result($fnc, 0);
 		} elseif($start == -1) {
@@ -289,7 +289,7 @@ EOF;
 		$ex_stas = 'None';
   
 		if($exlist) {
-			$query = "SELECT tc_station_name FROM tc_stations WHERE tc_station_id in ($exlist)";
+			$query = "SELECT name FROM tc_stations WHERE id in ($exlist)";
 			$fnc = mysql_query($query) or die("Select Failed! [000]");
 
 			$row = mysql_fetch_row($fnc);
@@ -325,10 +325,10 @@ EOF;
 
 		$clauses = array();
 
-		$zones = array("( tc_station_zone >= $min AND tc_station_zone <= $max )");
-		if(isset($_POST['tl'])) $zones[] = " tc_station_zone = 'T' ";
-		if(isset($_POST['wj'])) $zones[] = " tc_station_zone = 'W' ";
-		if(isset($_POST['eg'])) $zones[] = " tc_station_zone = 'C' ";
+		$zones = array("( zone >= $min AND zone <= $max )");
+		if(isset($_POST['tl'])) $zones[] = " zone = 'T' ";
+		if(isset($_POST['wj'])) $zones[] = " zone = 'W' ";
+		if(isset($_POST['eg'])) $zones[] = " zone = 'C' ";
 		$clauses[] = implode(' OR ', $zones);
 
 		$networks = array();
@@ -346,9 +346,9 @@ EOF;
 				$clauses[] = " location_ns = 'S' ";
 		}
 
-		if($start) $clauses[] = " tc_station_id != $start ";
+		if($start) $clauses[] = " id != $start ";
 
-		if($exlist) $clauses[] = " tc_station_id NOT IN ( $exlist ) ";
+		if($exlist) $clauses[] = " id NOT IN ( $exlist ) ";
 
 		return ' ( ' . implode(' ) AND ( ', $clauses) . ' ) ';
 
