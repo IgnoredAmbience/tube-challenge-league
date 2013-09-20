@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.1
+-- version 4.0.6
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 24, 2010 at 12:38 PM
--- Server version: 5.1.30
--- PHP Version: 5.2.8
+-- Generation Time: Sep 20, 2013 at 07:17 PM
+-- Server version: 5.1.63
+-- PHP Version: 5.3.14
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,7 +17,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `dbtubechallengeleague`
+-- Database: `thomas_tc`
 --
 
 -- --------------------------------------------------------
@@ -29,14 +30,14 @@ CREATE TABLE IF NOT EXISTS `tc_stations` (
   `id` smallint(3) NOT NULL AUTO_INCREMENT,
   `name` varchar(28) COLLATE utf8_unicode_ci NOT NULL,
   `zone` char(3) COLLATE utf8_unicode_ci NOT NULL,
-  `is_lu` BOOLEAN NOT NULL,
-  `is_nr` BOOLEAN NOT NULL,
-  `is_dlr` BOOLEAN NOT NULL,
-  `is_lo` BOOLEAN NOT NULL,
-  `is_tl` BOOLEAN NOT NULL,
-  `location_ns` ENUM ('N', 'S')  NOT NULL,
+  `is_lu` tinyint(1) NOT NULL,
+  `is_nr` tinyint(1) NOT NULL,
+  `is_dlr` tinyint(1) NOT NULL,
+  `is_lo` tinyint(1) NOT NULL,
+  `is_tl` tinyint(1) NOT NULL,
+  `location_ns` enum('N','S') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=637 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=641 ;
 
 --
 -- Dumping data for table `tc_stations`
@@ -164,7 +165,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (119, 'Church Street', 'T', 0, 0, 0, 0, 1, 'S'),
 (120, 'City Thameslink', '1', 0, 1, 0, 0, 0, 'N'),
 (121, 'Clapham Common', '2', 1, 0, 0, 0, 0, 'S'),
-(122, 'Clapham High Street', '2', 0, 1, 0, 0, 0, 'S'),
+(122, 'Clapham High Street', '2', 0, 1, 0, 1, 0, 'S'),
 (123, 'Clapham Junction', '2', 0, 1, 0, 1, 0, 'S'),
 (124, 'Clapham North', '2', 1, 0, 0, 0, 0, 'S'),
 (125, 'Clapham South', '2.5', 1, 0, 0, 0, 0, 'S'),
@@ -192,7 +193,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (147, 'Dagenham Heathway', '5', 1, 0, 0, 0, 0, 'N'),
 (148, 'Dalston Kingsland', '2', 0, 0, 0, 1, 0, 'N'),
 (149, 'Debden', '6', 1, 0, 0, 0, 0, 'N'),
-(150, 'Denmark Hill', '2', 0, 1, 0, 0, 0, 'S'),
+(150, 'Denmark Hill', '2', 0, 1, 0, 1, 0, 'S'),
 (151, 'Deptford', '2', 0, 1, 0, 0, 0, 'S'),
 (152, 'Deptford Bridge', '2.5', 0, 0, 1, 0, 0, 'S'),
 (153, 'Devons Road', '2', 0, 0, 1, 0, 0, 'N'),
@@ -447,7 +448,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (402, 'Palmers Green', '4', 0, 1, 0, 0, 0, 'N'),
 (403, 'Park Royal', '3', 1, 0, 0, 0, 0, 'N'),
 (404, 'Parsons Green', '2', 1, 0, 0, 0, 0, 'N'),
-(405, 'Peckham Rye', '2', 0, 1, 0, 0, 0, 'S'),
+(405, 'Peckham Rye', '2', 0, 1, 0, 1, 0, 'S'),
 (406, 'Penge East', '4', 0, 1, 0, 0, 0, 'S'),
 (407, 'Penge West', '4', 0, 1, 0, 1, 0, 'S'),
 (408, 'Perivale', '4', 1, 0, 0, 0, 0, 'N'),
@@ -469,7 +470,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (424, 'Putney', '2.5', 0, 1, 0, 0, 0, 'S'),
 (425, 'Putney Bridge', '2', 1, 0, 0, 0, 0, 'N'),
 (426, 'Queen''s Park', '2', 1, 0, 0, 1, 0, 'N'),
-(427, 'Queen''s Road (Peckham)', '2', 0, 1, 0, 0, 0, 'S'),
+(427, 'Queens Road Peckham', '2', 0, 1, 0, 1, 0, 'S'),
 (428, 'Queensbury', '4', 1, 0, 0, 0, 0, 'N'),
 (429, 'Queenstown Road (Battersea)', '2', 0, 1, 0, 0, 0, 'S'),
 (430, 'Queensway', '1', 1, 0, 0, 0, 0, 'N'),
@@ -603,7 +604,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (558, 'Walthamstow Queen''s Road', '3', 0, 0, 0, 1, 0, 'N'),
 (559, 'Wandle Park', 'T', 0, 0, 0, 0, 1, 'S'),
 (560, 'Wandsworth Common', '3', 0, 1, 0, 0, 0, 'S'),
-(561, 'Wandsworth Road', '2', 0, 1, 0, 0, 0, 'S'),
+(561, 'Wandsworth Road', '2', 0, 1, 0, 1, 0, 'S'),
 (562, 'Wandsworth Town', '2', 0, 1, 0, 0, 0, 'S'),
 (563, 'Wanstead', '4', 1, 0, 0, 0, 0, 'N'),
 (564, 'Wanstead Park', '3', 0, 0, 0, 1, 0, 'N'),
@@ -626,7 +627,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (581, 'West Dulwich', '3', 0, 1, 0, 0, 0, 'S'),
 (582, 'West Ealing', '3', 0, 1, 0, 0, 0, 'N'),
 (583, 'West Finchley', '4', 1, 0, 0, 0, 0, 'N'),
-(584, 'West Ham', '3', 1, 1, 0, 0, 0, 'N'),
+(584, 'West Ham', '3', 1, 1, 1, 0, 0, 'N'),
 (585, 'West Hampstead (Jubilee)', '2', 1, 0, 0, 0, 0, 'N'),
 (586, 'West Harrow', '5', 1, 0, 0, 0, 0, 'N'),
 (587, 'West India Quay', '2', 0, 0, 1, 0, 0, 'N'),
@@ -678,5 +679,12 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (633, 'West Hampstead (Overground)', '2', 0, 0, 0, 1, 0, 'N'),
 (634, 'West Hampstead Thameslink', '2', 0, 0, 0, 1, 0, 'N'),
 (635, 'Shadwell (Overground)', '2', 0, 0, 0, 1, 0, 'N'),
-(636, 'Canary Wharf (DLR)', '2', 0, 0, 1, 0, 0, 'N');
+(636, 'Canary Wharf (DLR)', '2', 0, 0, 1, 0, 0, 'N'),
+(637, 'Stratford International', '3', 0, 1, 1, 0, 0, 'N'),
+(638, 'Stratford High Street', '3', 0, 0, 1, 0, 0, 'N'),
+(639, 'Abbey Road', '3', 0, 0, 1, 0, 0, 'N'),
+(640, 'Star Lane', '3', 0, 0, 1, 0, 0, 'N');
 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
