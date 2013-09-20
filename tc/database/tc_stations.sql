@@ -77,7 +77,7 @@ INSERT INTO `tc_stations` (`id`, `name`, `zone`, `is_lu`, `is_nr`, `is_dlr`, `is
 (31, 'Barnes', '3', 0, 1, 0, 0, 0, 'S'),
 (32, 'Barnes Bridge', '3', 0, 1, 0, 0, 0, 'S'),
 (33, 'Barons Court', '2', 1, 0, 0, 0, 0, 'N'),
-(34, 'Battersea Park', '2', 0, 1, 0, 0, 0, 'S'),
+(34, 'Battersea Park', '2', 0, 1, 0, 1, 0, 'S'),
 (35, 'Bayswater', '1', 1, 0, 0, 0, 0, 'N'),
 (36, 'Beckenham Hill', '4', 0, 1, 0, 0, 0, 'S'),
 (37, 'Beckenham Junction', '4', 0, 1, 0, 0, 1, 'S'),
