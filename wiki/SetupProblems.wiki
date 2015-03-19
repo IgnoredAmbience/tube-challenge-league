@@ -1,7 +1,0 @@
-#summary Problems getting started with the code and data.
-
-= Problems Getting Started? =
-
-Check the [http://code.google.com/p/tube-challenge-league/ Project Home] page first. If still stuck, then please describe the issue(s) here and I'll reply with a solution.
-  * This helps keep everything in one place.
-  * Everyone else can benefit from reading it.
